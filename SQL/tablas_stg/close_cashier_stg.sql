@@ -5,5 +5,6 @@ CREATE TABLE `close_cashier_stg` (
   `business_date` date DEFAULT NULL,
   `close_datetime` datetime DEFAULT NULL,
   `transactions_count` int DEFAULT NULL,
-  `transactions_total` decimal(10,2) DEFAULT NULL
+  `transactions_total` decimal(10,2) DEFAULT NULL,
+  `file_name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3
