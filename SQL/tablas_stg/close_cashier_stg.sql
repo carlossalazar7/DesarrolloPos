@@ -1,0 +1,9 @@
+CREATE TABLE `close_cashier_stg` (
+  `store` int DEFAULT NULL,
+  `cash_machine` varchar(15) DEFAULT NULL,
+  `cashier` varchar(50) DEFAULT NULL,
+  `business_date` date DEFAULT NULL,
+  `close_datetime` datetime DEFAULT NULL,
+  `transactions_count` int DEFAULT NULL,
+  `transactions_total` decimal(10,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3
