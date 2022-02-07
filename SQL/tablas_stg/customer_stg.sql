@@ -9,5 +9,6 @@ create table customer_stg (
     customer_address varchar(255),
     customer_document varchar(50),
     customer_gender varchar(1),
-    customer_type varchar(50)
+    customer_type varchar(50),
+    file_name varchar(255)
 );
