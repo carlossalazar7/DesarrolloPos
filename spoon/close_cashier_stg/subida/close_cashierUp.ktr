@@ -74,17 +74,18 @@
   </notepads>
   <connection>
     <name>close_cashier</name>
-    <server>localhost</server>
+    <server>3.128.250.42</server>
     <type>MYSQL</type>
     <access>Native</access>
     <database>ConsitiPOS</database>
     <port>3306</port>
-    <username>aragon</username>
-    <password>Encrypted 2bea0fc9141959a9eef2af63d98c5b585</password>
+    <username>root</username>
+    <password>Encrypted 2be98afc86ae49d8ab810ba798cc2fd88</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
     <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.characterEncoding</code><attribute>UTF-8</attribute></attribute>
       <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
       <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
@@ -159,6 +160,10 @@
           <column_name>transactions_total</column_name>
           <stream_name>transactions_total</stream_name>
         </field>
+        <field>
+          <column_name>file_name</column_name>
+          <stream_name>file_name</stream_name>
+        </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -206,10 +211,10 @@
     <encoding/>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>&#x24;&#x7b;file_name&#x7d;</name>
+      <name>&#x24;&#x7b;file_name_dat&#x7d;</name>
       <filemask/>
       <exclude_filemask/>
-      <file_required>N</file_required>
+      <file_required>Y</file_required>
       <include_subfolders>N</include_subfolders>
       <type>CSV</type>
       <compression>None</compression>
@@ -280,7 +285,7 @@
       <field>
         <name>close_datatime</name>
         <type>Date</type>
-        <format>MM-dd-yyyy HH&#x3a;mm&#x3a;ss</format>
+        <format>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</format>
         <currency>C</currency>
         <decimal>.</decimal>
         <group>,</group>
@@ -340,7 +345,7 @@
     <line_number_files_extension>line</line_number_files_extension>
     <date_format_lenient>Y</date_format_lenient>
     <date_format_locale>es_SV</date_format_locale>
-    <shortFileFieldName/>
+    <shortFileFieldName>file_name</shortFileFieldName>
     <pathFieldName/>
     <hiddenFieldName/>
     <lastModificationTimeFieldName/>

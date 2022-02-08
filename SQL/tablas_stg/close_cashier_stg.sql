@@ -1,10 +1,10 @@
-CREATE TABLE `close_cashier_stg` (
-  `store` int DEFAULT NULL,
-  `cash_machine` varchar(15) DEFAULT NULL,
-  `cashier` varchar(50) DEFAULT NULL,
-  `business_date` date DEFAULT NULL,
-  `close_datetime` datetime DEFAULT NULL,
-  `transactions_count` int DEFAULT NULL,
-  `transactions_total` decimal(10,2) DEFAULT NULL,
-  `file_name` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3
+CREATE TABLE ConsitiPOS.`close_cashier_stg` (
+  `store` int(10) NOT NULL,
+  `cash_machine` varchar(15) NOT NULL,
+  `cashier` varchar(50) NOT NULL,
+  `business_date` date NOT NULL,
+  `close_datatime` datetime NOT NULL,
+  `transactions_count` double NOT NULL,
+  `transactions_total` decimal(10,2) NOT NULL,
+  `file_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

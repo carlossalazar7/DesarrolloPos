@@ -128,7 +128,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>&#x2f;home&#x2f;aragon&#x2f;pasantia&#x2f;archivo_creado&#x2f;customer_stg_1001_03_</name>
+      <name>C&#x3a;&#x5c;apps&#x5c;pos&#x5c;data&#x5c;customer_stg_&#x24;&#x7b;POS_STORE&#x7d;_&#x24;&#x7b;POS_NUM&#x7d;_</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -136,9 +136,9 @@
       <append>N</append>
       <split>N</split>
       <haspartno>N</haspartno>
-      <add_date>Y</add_date>
-      <add_time>Y</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>Y</SpecifyFormat>
       <date_time_format>yyyyMMddHHmmss</date_time_format>
       <add_to_result_filenames>Y</add_to_result_filenames>
       <pad>N</pad>
@@ -167,7 +167,7 @@
            <schema_name/>
            </partitioning>
     <connection>ConsitiPOS</connection>
-    <sql>SELECT DISTINCT&#xa;        &#x24;&#x7b;POS_STORE&#x7d; AS &#x60;store&#x60;,&#xa;        &#x60;ve&#x60;.&#x60;terminal&#x60; AS &#x60;cash_machine&#x60;,&#xa;        DATE_FORMAT&#x28;&#x60;ve&#x60;.&#x60;fechanegocio&#x60;, &#x27;&#x25;d&#x2f;&#x25;m&#x2f;&#x25;Y&#x27;&#x29; AS &#x60;business_date&#x60;,&#xa;        NULL AS &#x60;tran_seq_no&#x60;,&#xa;        &#x60;c&#x60;.&#x60;nombre&#x60; AS &#x60;customer_name&#x60;,&#xa;        &#x60;c&#x60;.&#x60;email&#x60; AS &#x60;customer_email&#x60;,&#xa;        &#x60;c&#x60;.&#x60;telefono&#x60; AS &#x60;customer_phone&#x60;,&#xa;        &#x60;cdd&#x60;.&#x60;direccion&#x60; AS &#x60;customer_address&#x60;,&#xa;        &#x60;tdc&#x60;.&#x60;nombre&#x60; AS &#x60;customer_document&#x60;,&#xa;        &#x60;c&#x60;.&#x60;sexo&#x60; AS &#x60;customer_genre&#x60;,&#xa;        &#x60;tcm&#x60;.&#x60;nombre&#x60; AS &#x60;customer_type&#x60;&#xa;    FROM&#xa;        &#x28;&#x28;&#x28;&#x28;&#x28;&#x28;&#x28;&#x60;silverpos&#x60;.&#x60;clientes&#x60; &#x60;c&#x60;&#xa;        JOIN &#x60;silverpos&#x60;.&#x60;tipo_doc_cliente&#x60; &#x60;tdc&#x60; ON &#x28;&#x28;&#x60;c&#x60;.&#x60;id_tipo_doc&#x60; &#x3d; &#x60;tdc&#x60;.&#x60;id&#x60;&#x29;&#x29;&#x29;&#xa;        JOIN &#x60;silverpos&#x60;.&#x60;tipo_cliente_maestro&#x60; &#x60;tcm&#x60; ON &#x28;&#x28;&#x60;c&#x60;.&#x60;tipo_cliente&#x60; &#x3d; &#x60;tcm&#x60;.&#x60;id&#x60;&#x29;&#x29;&#x29;&#xa;        JOIN &#x60;silverpos&#x60;.&#x60;clientes_direcciones_domicilios&#x60; &#x60;cdd&#x60; ON &#x28;&#x28;&#x60;c&#x60;.&#x60;id&#x60; &#x3d; &#x60;cdd&#x60;.&#x60;id_cliente&#x60;&#x29;&#x29;&#x29;&#xa;        JOIN &#x60;fiscal_el_salvador&#x60;.&#x60;caja_documento&#x60; &#x60;cd&#x60;&#x29;&#xa;        JOIN &#x60;silverpos&#x60;.&#x60;variables_configuracion&#x60; &#x60;vc&#x60;&#x29;&#xa;        JOIN &#x60;ventasdiarias&#x60;.&#x60;fecha_negocio&#x60; &#x60;fn&#x60;&#x29;&#xa;        JOIN &#x60;ventasdiarias&#x60;.&#x60;venta_encabezado&#x60; &#x60;ve&#x60;&#x29;&#xa;    WHERE&#xa;        &#x28;&#x60;ve&#x60;.&#x60;idcliente&#x60; &#x3d; &#x60;c&#x60;.&#x60;id&#x60;&#x29;</sql>
+    <sql>SELECT DISTINCT&#xd;&#xa;        &#x24;&#x7b;POS_STORE&#x7d; AS &#x60;store&#x60;,&#xd;&#xa;        &#x60;ve&#x60;.&#x60;terminal&#x60; AS &#x60;cash_machine&#x60;,&#xd;&#xa;        DATE_FORMAT&#x28;&#x60;ve&#x60;.&#x60;fechanegocio&#x60;, &#x27;&#x25;d&#x2f;&#x25;m&#x2f;&#x25;Y&#x27;&#x29; AS &#x60;business_date&#x60;,&#xd;&#xa;        &#x60;ve&#x60;.&#x60;id&#x60; AS &#x60;tran_seq_no&#x60;,&#xd;&#xa;        &#x60;c&#x60;.&#x60;nombre&#x60; AS &#x60;customer_name&#x60;,&#xd;&#xa;        &#x60;c&#x60;.&#x60;email&#x60; AS &#x60;customer_email&#x60;,&#xd;&#xa;        &#x60;c&#x60;.&#x60;telefono&#x60; AS &#x60;customer_phone&#x60;,&#xd;&#xa;        &#x60;cdd&#x60;.&#x60;direccion&#x60; AS &#x60;customer_address&#x60;,&#xd;&#xa;        &#x60;tdc&#x60;.&#x60;nombre&#x60; AS &#x60;customer_document&#x60;,&#xd;&#xa;        &#x60;c&#x60;.&#x60;sexo&#x60; AS &#x60;customer_genre&#x60;,&#xd;&#xa;        &#x60;tcm&#x60;.&#x60;nombre&#x60; AS &#x60;customer_type&#x60;&#xd;&#xa;    FROM&#xd;&#xa;        &#x28;&#x28;&#x28;&#x28;&#x28;&#x28;&#x28;&#x60;silverpos&#x60;.&#x60;clientes&#x60; &#x60;c&#x60;&#xd;&#xa;        JOIN &#x60;silverpos&#x60;.&#x60;tipo_doc_cliente&#x60; &#x60;tdc&#x60; ON &#x28;&#x28;&#x60;c&#x60;.&#x60;id_tipo_doc&#x60; &#x3d; &#x60;tdc&#x60;.&#x60;id&#x60;&#x29;&#x29;&#x29;&#xd;&#xa;        JOIN &#x60;silverpos&#x60;.&#x60;tipo_cliente_maestro&#x60; &#x60;tcm&#x60; ON &#x28;&#x28;&#x60;c&#x60;.&#x60;tipo_cliente&#x60; &#x3d; &#x60;tcm&#x60;.&#x60;id&#x60;&#x29;&#x29;&#x29;&#xd;&#xa;        JOIN &#x60;silverpos&#x60;.&#x60;clientes_direcciones_domicilios&#x60; &#x60;cdd&#x60; ON &#x28;&#x28;&#x60;c&#x60;.&#x60;id&#x60; &#x3d; &#x60;cdd&#x60;.&#x60;id_cliente&#x60;&#x29;&#x29;&#x29;&#xd;&#xa;        JOIN &#x60;fiscal_el_salvador&#x60;.&#x60;caja_documento&#x60; &#x60;cd&#x60;&#x29;&#xd;&#xa;        JOIN &#x60;silverpos&#x60;.&#x60;variables_configuracion&#x60; &#x60;vc&#x60;&#x29;&#xd;&#xa;        JOIN &#x60;ventasdiarias&#x60;.&#x60;fecha_negocio&#x60; &#x60;fn&#x60;&#x29;&#xd;&#xa;        JOIN &#x60;ventasdiarias&#x60;.&#x60;venta_encabezado&#x60; &#x60;ve&#x60;&#x29;&#xd;&#xa;    WHERE&#xd;&#xa;        &#x28;&#x60;ve&#x60;.&#x60;idcliente&#x60; &#x3d; &#x60;c&#x60;.&#x60;id&#x60;&#x29;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
