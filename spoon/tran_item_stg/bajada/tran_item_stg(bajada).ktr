@@ -104,32 +104,6 @@
   <hop> <from>tren_item</from><to>text file output</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>tren_item</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>ConsitiPOS</connection>
-    <sql>select &#xd;&#xa;	&#x24;&#x7b;POS_STORE&#x7d; as store, vc.terminal as cash_machine, &#xd;&#xa;	date_format&#x28;vc.fechanegocio, &#x22;&#x25;d-&#x25;m-&#x25;Y&#x22;&#x29; as business_date,&#xd;&#xa;	pv.nombre as item, vd.cantidad as quantity, &#xd;&#xa;	vd.precio as unit_price, &#xd;&#xa;	&#x28;vd.cantidad &#x2a; vd.precio&#x29; as line_amount, &#xd;&#xa;	0 as tran_seq_no, 0 as line_seq_no&#xd;&#xa;&#xd;&#xa;from &#xd;&#xa;	ventasdiarias.venta_encabezado vc, ventasdiarias.plusvd pv,&#xd;&#xa;	ventasdiarias.venta_detalle_plus vd&#xd;&#xa;&#xd;&#xa;where vc.idh &#x3d; vd.idh and vd.id_plu &#x3d; pv.id&#x3b;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>199</xloc>
-      <yloc>92</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
     <name>text file output</name>
     <type>TextFileOutput</type>
     <description/>
@@ -176,6 +150,32 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>492</xloc>
+      <yloc>92</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>tren_item</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>ConsitiPOS</connection>
+    <sql>select &#xd;&#xa;	&#x24;&#x7b;POS_STORE&#x7d; as store, vc.terminal as cash_machine, &#xd;&#xa;	date_format&#x28;vc.fechanegocio, &#x22;&#x25;d-&#x25;m-&#x25;Y&#x22;&#x29; as business_date,&#xd;&#xa;	pv.nombre as item, vd.cantidad as quantity, &#xd;&#xa;	vd.precio as unit_price, &#xd;&#xa;	&#x28;vd.cantidad &#x2a; vd.precio&#x29; as line_amount, &#xd;&#xa;	vc.id as tran_seq_no, vd.id as line_seq_no&#xd;&#xa;&#xd;&#xa;from &#xd;&#xa;	ventasdiarias.venta_encabezado vc, ventasdiarias.plusvd pv,&#xd;&#xa;	ventasdiarias.venta_detalle_plus vd&#xd;&#xa;&#xd;&#xa;where vc.idh &#x3d; vd.idh and vd.id_plu &#x3d; pv.id&#x3b;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>199</xloc>
       <yloc>92</yloc>
       <draw>Y</draw>
       </GUI>

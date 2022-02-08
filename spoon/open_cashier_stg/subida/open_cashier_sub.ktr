@@ -180,7 +180,12 @@
     <encoding/>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C&#x3a;&#x5c;Users&#x5c;Yeison&#x5c;Downloads&#x5c;open_cashier_1_10001_2022-02-04-10_12_26.txt</name>
+      <name/>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>C&#x3a;&#x5c;Users&#x5c;Yeison&#x5c;Downloads&#x5c;open_cashier_1_10001_2022-02-07-13_26_45.dat</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -223,7 +228,7 @@
       </field>
       <field>
         <name>CASHIER</name>
-        <type>Integer</type>
+        <type>String</type>
         <format>&#x23;</format>
         <currency>Bs.S.</currency>
         <decimal>,</decimal>
