@@ -75,12 +75,12 @@
   </notepads>
   <connection>
     <name>prueba</name>
-    <server>&#x24;&#x7b;POS.IP&#x7d;</server>
+    <server>3.128.250.42</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>&#x24;&#x7b;POS.BDD&#x7d;</database>
-    <port>&#x24;&#x7b;POS.PUERTO&#x7d;</port>
-    <username>&#x24;&#x7b;POS.USER&#x7d;</username>
+    <database>ConsitiPOS</database>
+    <port>3306</port>
+    <username>root</username>
     <password>Encrypted 2be98afc86ae49d8ab810ba798cc2fd88</password>
     <servername/>
     <data_tablespace/>
@@ -91,7 +91,7 @@
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>&#x24;&#x7b;POS.PUERTO&#x7d;</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
       <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
@@ -167,6 +167,10 @@
         <field>
           <column_name>line_seq_no</column_name>
           <stream_name>line_seq_no</stream_name>
+        </field>
+        <field>
+          <column_name>file_name</column_name>
+          <stream_name>file_name</stream_name>
         </field>
     </fields>
      <cluster_schema/>
@@ -384,7 +388,7 @@
     <line_number_files_extension>line</line_number_files_extension>
     <date_format_lenient>Y</date_format_lenient>
     <date_format_locale>es_SV</date_format_locale>
-    <shortFileFieldName/>
+    <shortFileFieldName>file_name</shortFileFieldName>
     <pathFieldName/>
     <hiddenFieldName/>
     <lastModificationTimeFieldName/>
