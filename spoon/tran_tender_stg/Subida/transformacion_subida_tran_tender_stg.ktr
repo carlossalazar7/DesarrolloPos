@@ -74,13 +74,13 @@
   </notepads>
   <connection>
     <name>conexion_subida_tran_tender_stg</name>
-    <server>127.0.0.1</server>
+    <server>3.128.250.42</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>silverpos_hist</database>
+    <database>ConsitiPOS</database>
     <port>3306</port>
     <username>root</username>
-    <password>Encrypted </password>
+    <password>Encrypted 2be98afc86ae49d8ab810ba798cc2fd88</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -103,72 +103,6 @@
   <order>
   <hop> <from>Text file input</from><to>Table output</to><enabled>Y</enabled> </hop>
   </order>
-  <step>
-    <name>Table output</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>conexion_subida_tran_tender_stg</connection>
-    <schema/>
-    <table>tran_tender_stg</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-        <field>
-          <column_name>store</column_name>
-          <stream_name>store</stream_name>
-        </field>
-        <field>
-          <column_name>cash_machine</column_name>
-          <stream_name>cash_machine</stream_name>
-        </field>
-        <field>
-          <column_name>business_date</column_name>
-          <stream_name>business_date</stream_name>
-        </field>
-        <field>
-          <column_name>tender_name</column_name>
-          <stream_name>tender_name</stream_name>
-        </field>
-        <field>
-          <column_name>tender_amount</column_name>
-          <stream_name>tender_amount</stream_name>
-        </field>
-        <field>
-          <column_name>tran_seq_no</column_name>
-          <stream_name>tran_seq_no</stream_name>
-        </field>
-        <field>
-          <column_name>tender_seq_no</column_name>
-          <stream_name>tender_seq_no</stream_name>
-        </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>610</xloc>
-      <yloc>207</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
   <step>
     <name>Text file input</name>
     <type>TextFileInput</type>
@@ -204,13 +138,13 @@
     <rownumByFile>N</rownumByFile>
     <rownum_field/>
     <format>DOS</format>
-    <encoding>UTF-8</encoding>
+    <encoding/>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C&#x3a;&#x5c;Users&#x5c;David&#x5c;Desktop&#x5c;Consiti-pasantia&#x5c;Trabajo&#x5c;Bajada&#x5c;tran_tender_stg_1_1_20220203183540.dat</name>
+      <name>&#x24;&#x7b;f_name_file&#x7d;</name>
       <filemask/>
       <exclude_filemask/>
-      <file_required>N</file_required>
+      <file_required>Y</file_required>
       <include_subfolders>N</include_subfolders>
       <type>CSV</type>
       <compression>None</compression>
@@ -251,7 +185,7 @@
       <field>
         <name>business_date</name>
         <type>Date</type>
-        <format>yyyy&#x2f;MM&#x2f;dd HH&#x3a;mm&#x3a;ss.SSS</format>
+        <format>dd&#x2f;MM&#x2f;yyyy</format>
         <currency>C</currency>
         <decimal>.</decimal>
         <group>,</group>
@@ -341,7 +275,7 @@
     <line_number_files_extension>line</line_number_files_extension>
     <date_format_lenient>Y</date_format_lenient>
     <date_format_locale>es_SV</date_format_locale>
-    <shortFileFieldName/>
+    <shortFileFieldName>file_name</shortFileFieldName>
     <pathFieldName/>
     <hiddenFieldName/>
     <lastModificationTimeFieldName/>
@@ -351,8 +285,78 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>240</xloc>
-      <yloc>212</yloc>
+      <xloc>259</xloc>
+      <yloc>226</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Table output</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>conexion_subida_tran_tender_stg</connection>
+    <schema/>
+    <table>tran_tender_stg</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>store</column_name>
+          <stream_name>store</stream_name>
+        </field>
+        <field>
+          <column_name>cash_machine</column_name>
+          <stream_name>cash_machine</stream_name>
+        </field>
+        <field>
+          <column_name>business_date</column_name>
+          <stream_name>business_date</stream_name>
+        </field>
+        <field>
+          <column_name>tender_name</column_name>
+          <stream_name>tender_name</stream_name>
+        </field>
+        <field>
+          <column_name>tender_amount</column_name>
+          <stream_name>tender_amount</stream_name>
+        </field>
+        <field>
+          <column_name>tran_seq_no</column_name>
+          <stream_name>tran_seq_no</stream_name>
+        </field>
+        <field>
+          <column_name>tender_seq_no</column_name>
+          <stream_name>tender_seq_no</stream_name>
+        </field>
+        <field>
+          <column_name>file_name</column_name>
+          <stream_name>file_name</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>526</xloc>
+      <yloc>227</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

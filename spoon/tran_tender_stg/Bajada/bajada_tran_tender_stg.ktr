@@ -115,7 +115,7 @@
            <schema_name/>
            </partitioning>
     <connection>Bajada_tran_tender_stg</connection>
-    <sql> SELECT DISTINCT&#xd;&#xa; &#x24;&#x7b;STORE&#x7d; as store, b.caja as cash_machine, c.fecha as business_date, &#xd;&#xa; d.nombre as tender_name, e.valor AS tender_amount, &#xd;&#xa; &#x24;&#x7b;TRAN_SEQ_NO&#x7d; as tran_seq_no, &#x24;&#x7b;TENDER_SEQ_NO&#x7d; as tender_seq_no&#xd;&#xa; from&#xd;&#xa; fiscal_el_salvador.caja_documento b, ventasdiarias.fecha_negocio c,  &#xd;&#xa; ventasdiarias.formas_de_pagovd d,&#xd;&#xa; ventasdiarias.venta_detalle_pagos e&#xd;&#xa; where &#xd;&#xa; b.id &#x3d; b.id&#xd;&#xa; and&#xd;&#xa; d.nombre &#x3c;&#x3e; &#x27; &#x27;</sql>
+    <sql>            SELECT DISTINCT&#xd;&#xa;			10002 as store, b.terminal as cash_machine, DATE_FORMAT&#x28;c.fecha,&#x27;&#x25;d&#x2f;&#x25;m&#x2f;&#x25;Y&#x27;&#x29; as business_date, &#xd;&#xa;			d.nombre as tender_name, e.valor AS tender_amount, &#xd;&#xa;			a.id_encaventa as tran_seq_no, a.id as tender_seq_no&#xd;&#xa;			from&#xd;&#xa;			ventasdiarias.venta_detalle_pagos a ,&#xd;&#xa;			ventasdiarias.venta_encabezado b, &#xd;&#xa;			ventasdiarias.fecha_negocio c, ventasdiarias.formas_de_pagovd d,&#xd;&#xa;			ventasdiarias.venta_detalle_pagos e&#xd;&#xa;			where &#xd;&#xa;			b.id &#x3d; b.id&#xd;&#xa;			and&#xd;&#xa;			d.nombre &#x3c;&#x3e; &#x27; &#x27;	</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -199,7 +199,7 @@
       <field>
         <name>business_date</name>
         <type>Date</type>
-        <format/>
+        <format>dd&#x2f;MM&#x2f;yyyy</format>
         <currency/>
         <decimal/>
         <group/>
