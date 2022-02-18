@@ -107,12 +107,12 @@
   </connection>
   <connection>
     <name>conexion_ventasdiarias</name>
-    <server>&#x24;&#x7b;POS_IP&#x7d;</server>
+    <server>&#x24;&#x7b;POS.IP&#x7d;</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>&#x24;&#x7b;POS_DB&#x7d;</database>
-    <port>&#x24;&#x7b;POS_PORT&#x7d;</port>
-    <username>&#x24;&#x7b;POS_USER&#x7d;</username>
+    <database>&#x24;&#x7b;POS.DB&#x7d;</database>
+    <port>&#x24;&#x7b;POS.PORT&#x7d;</port>
+    <username>&#x24;&#x7b;POS.USER&#x7d;</username>
     <password>Encrypted 2be98afc86ae49d8ab810ba798cc2fd88</password>
     <servername/>
     <data_tablespace/>
@@ -124,7 +124,7 @@
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>&#x24;&#x7b;POS_PORT&#x7d;</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>&#x24;&#x7b;POS.PORT&#x7d;</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
       <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
@@ -187,8 +187,8 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>&#x2f;home&#x2f;avalos&#x2f;Documentos&#x2f;pasantia-consiti&#x2f;project_spoon_1&#x2f;extraccion&#x2f;open_cashier_&#x24;&#x7b;POS_STORE&#x7d;_&#x24;&#x7b;POS_NUM&#x7d;_</name>
-      <is_command>N</is_command>
+      <name>C&#x3a;&#x5c;Apps&#x5c;pos&#x5c;data&#x5c;open_cashier_&#x24;&#x7b;POS_STORE&#x7d;_&#x24;&#x7b;POS_NUM&#x7d;_</name>
+      <is_command>Y</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
       <extention>dat</extention>
