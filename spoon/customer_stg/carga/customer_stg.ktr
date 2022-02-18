@@ -6,7 +6,6 @@
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
-    <trans_status>0</trans_status>
     <directory>&#x2f;</directory>
     <parameters>
     </parameters>
@@ -67,14 +66,14 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2022&#x2f;02&#x2f;01 18&#x3a;11&#x3a;34.155</created_date>
+  <created_date>2022&#x2f;02&#x2f;07 15&#x3a;09&#x3a;19.218</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2022&#x2f;02&#x2f;01 18&#x3a;11&#x3a;34.155</modified_date>
+  <modified_date>2022&#x2f;02&#x2f;07 15&#x3a;09&#x3a;19.218</modified_date>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>Consiti</name>
+    <name>CONSITI</name>
     <server>3.128.250.42</server>
     <type>MYSQL</type>
     <access>Native</access>
@@ -82,60 +81,6 @@
     <port>3306</port>
     <username>root</username>
     <password>Encrypted 2be98afc86ae49d8ab810ba798cc2fd88</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>CONSITIPOS</name>
-    <server>3.128.250.42</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>ConsitiPOS</database>
-    <port>3306</port>
-    <username>root</username>
-    <password>Encrypted 2be98afc86ae49d8ab810ba798cc2fd88</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
-      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
-      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
-      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
-      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
-      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
-      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>TEST</name>
-    <server>localhost</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>test_consiti</database>
-    <port>3306</port>
-    <username>root</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce10cc9da0ce</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -155,8 +100,94 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Text file input</from><to>customer_stg</to><enabled>Y</enabled> </hop>
+  <hop> <from>Text file input</from><to>Table output</to><enabled>Y</enabled> </hop>
   </order>
+  <step>
+    <name>Table output</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>CONSITI</connection>
+    <schema/>
+    <table>customer_stg</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>store</column_name>
+          <stream_name>store</stream_name>
+        </field>
+        <field>
+          <column_name>cash_machine</column_name>
+          <stream_name>cash_machine</stream_name>
+        </field>
+        <field>
+          <column_name>business_date</column_name>
+          <stream_name>business_date</stream_name>
+        </field>
+        <field>
+          <column_name>tran_seq_no</column_name>
+          <stream_name>tran_seq_no</stream_name>
+        </field>
+        <field>
+          <column_name>customer_name</column_name>
+          <stream_name>customer_name</stream_name>
+        </field>
+        <field>
+          <column_name>customer_email</column_name>
+          <stream_name>customer_email</stream_name>
+        </field>
+        <field>
+          <column_name>customer_phone</column_name>
+          <stream_name>customer_phone</stream_name>
+        </field>
+        <field>
+          <column_name>customer_address</column_name>
+          <stream_name>customer_address</stream_name>
+        </field>
+        <field>
+          <column_name>customer_document</column_name>
+          <stream_name>customer_document</stream_name>
+        </field>
+        <field>
+          <column_name>customer_gender</column_name>
+          <stream_name>customer_genre</stream_name>
+        </field>
+        <field>
+          <column_name>customer_type</column_name>
+          <stream_name>customer_type</stream_name>
+        </field>
+        <field>
+          <column_name>file_name</column_name>
+          <stream_name>SHORT_NAME</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>387</xloc>
+      <yloc>162</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
   <step>
     <name>Text file input</name>
     <type>TextFileInput</type>
@@ -196,9 +227,9 @@
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
       <name>&#x24;&#x7b;file&#x7d;</name>
-      <filemask/>
+      <filemask>.&#x2a;dat</filemask>
       <exclude_filemask/>
-      <file_required>Y</file_required>
+      <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
       <type>CSV</type>
       <compression>None</compression>
@@ -214,7 +245,7 @@
         <decimal>.</decimal>
         <group>,</group>
         <nullif>-</nullif>
-        <ifnull>&#x24;&#x7b;store&#x7d;</ifnull>
+        <ifnull/>
         <position>-1</position>
         <length>15</length>
         <precision>-1</precision>
@@ -253,8 +284,8 @@
       </field>
       <field>
         <name>tran_seq_no</name>
-        <type>Date</type>
-        <format>yyyy&#x2f;MM&#x2f;dd HH&#x3a;mm&#x3a;ss.SSS</format>
+        <type>Integer</type>
+        <format/>
         <currency>&#xa3;</currency>
         <decimal>.</decimal>
         <group>,</group>
@@ -388,8 +419,8 @@
     <line_number_files_destination_directory/>
     <line_number_files_extension>line</line_number_files_extension>
     <date_format_lenient>Y</date_format_lenient>
-    <date_format_locale>en_GB</date_format_locale>
-    <shortFileFieldName/>
+    <date_format_locale>es_SV</date_format_locale>
+    <shortFileFieldName>SHORT_NAME</shortFileFieldName>
     <pathFieldName/>
     <hiddenFieldName/>
     <lastModificationTimeFieldName/>
@@ -399,90 +430,8 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>233</xloc>
-      <yloc>196</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>customer_stg</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>CONSITIPOS</connection>
-    <schema/>
-    <table>customer_stg</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>N</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-        <field>
-          <column_name>store</column_name>
-          <stream_name>store</stream_name>
-        </field>
-        <field>
-          <column_name>cash_machine</column_name>
-          <stream_name>cash_machine</stream_name>
-        </field>
-        <field>
-          <column_name>business_date</column_name>
-          <stream_name>business_date</stream_name>
-        </field>
-        <field>
-          <column_name>tran_seq_no</column_name>
-          <stream_name>tran_seq_no</stream_name>
-        </field>
-        <field>
-          <column_name>customer_name</column_name>
-          <stream_name>customer_name</stream_name>
-        </field>
-        <field>
-          <column_name>customer_email</column_name>
-          <stream_name>customer_email</stream_name>
-        </field>
-        <field>
-          <column_name>customer_phone</column_name>
-          <stream_name>customer_phone</stream_name>
-        </field>
-        <field>
-          <column_name>customer_address</column_name>
-          <stream_name>customer_address</stream_name>
-        </field>
-        <field>
-          <column_name>customer_document</column_name>
-          <stream_name>customer_document</stream_name>
-        </field>
-        <field>
-          <column_name>customer_gender</column_name>
-          <stream_name>customer_genre</stream_name>
-        </field>
-        <field>
-          <column_name>customer_type</column_name>
-          <stream_name>customer_type</stream_name>
-        </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>459</xloc>
-      <yloc>198</yloc>
+      <xloc>181</xloc>
+      <yloc>165</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
