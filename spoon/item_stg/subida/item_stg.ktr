@@ -102,7 +102,7 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Text file input item_stg</from><to>Table output item_stg</to><enabled>N</enabled> </hop>
+  <hop> <from>Text file input item_stg</from><to>Table output item_stg</to><enabled>Y</enabled> </hop>
   </order>
   <step>
     <name>Table output item_stg</name>
@@ -212,10 +212,10 @@
     <encoding>UTF-8</encoding>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>&#x24;&#x7b;f_name_in&#x7d;</name>
-      <filemask>.&#x2a;dat</filemask>
+      <name/>
+      <filemask/>
       <exclude_filemask/>
-      <file_required>Y</file_required>
+      <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
       <type>CSV</type>
       <compression>None</compression>
@@ -356,7 +356,7 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>193</xloc>
+      <xloc>194</xloc>
       <yloc>179</yloc>
       <draw>Y</draw>
       </GUI>

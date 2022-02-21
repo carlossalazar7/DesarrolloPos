@@ -12,7 +12,7 @@
   <modified_date>2022&#x2f;02&#x2f;02 14&#x3a;53&#x3a;00.889</modified_date>
     <parameters>
         <parameter>
-            <name>f_name_in</name>
+            <name>fileName</name>
             <default_value/>
             <description/>
         </parameter>
@@ -69,7 +69,7 @@
       <fields>
         <field>
           <variable_name>f_name_in</variable_name>
-          <variable_value>&#x24;&#x7b;f_name_in&#x7d;</variable_value>
+          <variable_value>&#x24;&#x7b;fileName&#x7d;</variable_value>
           <variable_type>JVM</variable_type>
         </field>
       </fields>
