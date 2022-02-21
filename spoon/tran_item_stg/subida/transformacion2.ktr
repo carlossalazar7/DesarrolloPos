@@ -74,13 +74,13 @@
   <notepads>
   </notepads>
   <connection>
-    <name>prueba</name>
-    <server>3.128.250.42</server>
+    <name>3.128.250.42</name>
+    <server>&#x24;&#x7b;POS.IP&#x7d;</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>ConsitiPOS</database>
-    <port>3306</port>
-    <username>root</username>
+    <database>&#x24;&#x7b;POS.BD&#x7d;</database>
+    <port>&#x24;&#x7b;POS.PORT&#x7d;</port>
+    <username>&#x24;&#x7b;POS.USER&#x7d;</username>
     <password>Encrypted 2be98afc86ae49d8ab810ba798cc2fd88</password>
     <servername/>
     <data_tablespace/>
@@ -91,7 +91,7 @@
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>&#x24;&#x7b;POS.PORT&#x7d;</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
       <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
@@ -114,14 +114,14 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>prueba</connection>
+    <connection>3.128.250.42</connection>
     <schema/>
     <table>tran_item_stg</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
+    <specify_fields>N</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
     <partitioning_field/>
     <partitioning_daily>N</partitioning_daily>
@@ -219,13 +219,8 @@
     <encoding/>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>&#x24;&#x7b;file&#x7d;</name>
-      <filemask/>
-      <exclude_filemask/>
-      <file_required>N</file_required>
-      <include_subfolders>N</include_subfolders>
-      <name/>
-      <filemask/>
+      <name>&#x24;&#x7b;f_name_in&#x7d;</name>
+      <filemask>.&#x2a;dat</filemask>
       <exclude_filemask/>
       <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
@@ -268,7 +263,7 @@
       <field>
         <name>business_date</name>
         <type>Date</type>
-        <format>MM-dd-yyyy</format>
+        <format>dd&#x2f;MM&#x2f;yyyy</format>
         <currency>C</currency>
         <decimal>.</decimal>
         <group>,</group>
@@ -399,7 +394,7 @@
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>253</xloc>
-      <yloc>212</yloc>
+      <yloc>214</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

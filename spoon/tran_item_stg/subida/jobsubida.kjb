@@ -4,12 +4,18 @@
     <description/>
     <extended_description/>
     <job_version/>
+    <job_status>0</job_status>
   <directory>&#x2f;</directory>
   <created_user>-</created_user>
   <created_date>2022&#x2f;02&#x2f;04 10&#x3a;49&#x3a;45.203</created_date>
   <modified_user>-</modified_user>
   <modified_date>2022&#x2f;02&#x2f;04 10&#x3a;49&#x3a;45.203</modified_date>
     <parameters>
+        <parameter>
+            <name>fNameIn</name>
+            <default_value>C&#x3a;&#x5c;Users&#x5c;crist&#x5c;Desktop&#x5c;etlspos&#x5c;DesarrolloPos&#x5c;spoon&#x5c;tran_item_stg&#x5c;subida&#x5c;</default_value>
+            <description/>
+        </parameter>
     </parameters>
     <slaveservers>
     </slaveservers>
@@ -50,8 +56,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>221</xloc>
-      <yloc>217</yloc>
+      <xloc>138</xloc>
+      <yloc>151</yloc>
       </entry>
     <entry>
       <name>Transformation</name>
@@ -59,7 +65,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C&#x3a;&#x5c;apps&#x5c;pos&#x5c;etls&#x5c;transformacion2.ktr</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;transformacion2.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -83,8 +89,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>596</xloc>
-      <yloc>219</yloc>
+      <xloc>509</xloc>
+      <yloc>148</yloc>
       </entry>
     <entry>
       <name>Set variables</name>
@@ -95,16 +101,16 @@
       <file_variable_type>JVM</file_variable_type>
       <fields>
         <field>
-          <variable_name>file</variable_name>
-          <variable_value>&#x24;&#x7b;file&#x7d;</variable_value>
+          <variable_name>f_name_in</variable_name>
+          <variable_value>&#x24;&#x7b;fNameIn&#x7d;</variable_value>
           <variable_type>JVM</variable_type>
         </field>
       </fields>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>389</xloc>
-      <yloc>213</yloc>
+      <xloc>303</xloc>
+      <yloc>148</yloc>
       </entry>
     <entry>
       <name>Success</name>
@@ -113,8 +119,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>806</xloc>
-      <yloc>227</yloc>
+      <xloc>720</xloc>
+      <yloc>146</yloc>
       </entry>
   </entries>
   <hops>
