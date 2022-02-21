@@ -102,7 +102,7 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>Text file input item_stg</from><to>Table output item_stg</to><enabled>Y</enabled> </hop>
+  <hop> <from>Text file input item_stg</from><to>Table output item_stg</to><enabled>N</enabled> </hop>
   </order>
   <step>
     <name>Table output item_stg</name>
@@ -161,6 +161,10 @@
           <column_name>LAST_UPDATE_DATETIME</column_name>
           <stream_name>LAST_UPDATE_DATETIME</stream_name>
         </field>
+        <field>
+          <column_name>FILE_NAME</column_name>
+          <stream_name>FILE_NAME</stream_name>
+        </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
@@ -211,7 +215,7 @@
       <name>&#x24;&#x7b;f_name_in&#x7d;</name>
       <filemask>.&#x2a;dat</filemask>
       <exclude_filemask/>
-      <file_required>N</file_required>
+      <file_required>Y</file_required>
       <include_subfolders>N</include_subfolders>
       <type>CSV</type>
       <compression>None</compression>
@@ -342,7 +346,7 @@
     <line_number_files_extension>line</line_number_files_extension>
     <date_format_lenient>Y</date_format_lenient>
     <date_format_locale>es_SV</date_format_locale>
-    <shortFileFieldName/>
+    <shortFileFieldName>FILE_NAME</shortFileFieldName>
     <pathFieldName/>
     <hiddenFieldName/>
     <lastModificationTimeFieldName/>
