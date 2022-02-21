@@ -13,7 +13,7 @@
     <parameters>
         <parameter>
             <name>fNameIn</name>
-            <default_value>C&#x3a;&#x5c;Users&#x5c;crist&#x5c;Desktop&#x5c;etlspos&#x5c;DesarrolloPos&#x5c;spoon&#x5c;tran_item_stg&#x5c;subida&#x5c;</default_value>
+            <default_value/>
             <description/>
         </parameter>
     </parameters>
