@@ -263,7 +263,7 @@
       <field>
         <name>business_date</name>
         <type>Date</type>
-        <format>dd-MM-yyyy</format>
+        <format>dd&#x2f;MM&#x2f;yyyy</format>
         <currency>C</currency>
         <decimal>.</decimal>
         <group>,</group>
