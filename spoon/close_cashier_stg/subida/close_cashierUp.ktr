@@ -212,9 +212,9 @@
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
       <name>&#x24;&#x7b;file_name_dat&#x7d;</name>
-      <filemask/>
+      <filemask>.&#x2a;dat</filemask>
       <exclude_filemask/>
-      <file_required>Y</file_required>
+      <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
       <type>CSV</type>
       <compression>None</compression>
