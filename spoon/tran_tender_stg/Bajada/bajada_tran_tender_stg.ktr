@@ -154,7 +154,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>C&#x3a;&#x5c;Users&#x5c;David&#x5c;Desktop&#x5c;Consiti-pasantia&#x5c;Trabajo&#x5c;Bajada&#x5c;tran_tender_stg_1_1_20220203183540</name>
+      <name>C&#x3a;&#x5c;apps&#x5c;pos&#x5c;data&#x5c;tran_tender_stg_&#x24;&#x7b;POS_STORE&#x7d;_&#x24;&#x7b;POS_NUM&#x7d;</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -164,8 +164,8 @@
       <haspartno>N</haspartno>
       <add_date>N</add_date>
       <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
+      <SpecifyFormat>Y</SpecifyFormat>
+      <date_time_format>yyyyMMddHHmmss</date_time_format>
       <add_to_result_filenames>Y</add_to_result_filenames>
       <pad>N</pad>
       <fast_dump>N</fast_dump>
@@ -259,7 +259,7 @@
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>571</xloc>
+      <xloc>573</xloc>
       <yloc>236</yloc>
       <draw>Y</draw>
       </GUI>
