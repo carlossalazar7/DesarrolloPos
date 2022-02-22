@@ -198,7 +198,7 @@
       <add_date>N</add_date>
       <add_time>N</add_time>
       <SpecifyFormat>Y</SpecifyFormat>
-      <date_time_format>yyyy-MM-dd-HH&#x3a;mm&#x3a;ss</date_time_format>
+      <date_time_format>yyyyMMddHHmmss</date_time_format>
       <add_to_result_filenames>Y</add_to_result_filenames>
       <pad>N</pad>
       <fast_dump>N</fast_dump>
