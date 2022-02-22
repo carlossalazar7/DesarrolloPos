@@ -154,7 +154,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>C&#x3a;&#x5c;apps&#x5c;pos&#x5c;datas&#x5c;tran_head_stg_&#x24;&#x7b;POS_STORE&#x7d;_&#x24;&#x7b;POS_NUM&#x7d;_</name>
+      <name>C&#x3a;&#x5c;apps&#x5c;pos&#x5c;data&#x5c;tran_head_stg_&#x24;&#x7b;POS_STORE&#x7d;_&#x24;&#x7b;POS_NUM&#x7d;_</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
