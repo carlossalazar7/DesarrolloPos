@@ -74,13 +74,13 @@
   </notepads>
   <connection>
     <name>conexion_subida_tran_tender_stg</name>
-    <server>3.128.250.42</server>
+    <server>&#x24;&#x7b;POS.IP&#x7d;</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>ConsitiPOS</database>
-    <port>3306</port>
-    <username>root</username>
-    <password>Encrypted 2be98afc86ae49d8ab810ba798cc2fd88</password>
+    <database>&#x24;&#x7b;POS.DB&#x7d;</database>
+    <port>&#x24;&#x7b;POS.PORT&#x7d;</port>
+    <username>&#x24;&#x7b;POS.USER&#x7d;</username>
+    <password>&#x24;&#x7b;POS.PASSWORD&#x7d;</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -91,7 +91,7 @@
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>&#x24;&#x7b;POS.PORT&#x7d;</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
       <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
@@ -212,9 +212,9 @@
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
       <name>&#x24;&#x7b;fNamein&#x7d;</name>
-      <filemask/>
+      <filemask>.&#x2a;dat</filemask>
       <exclude_filemask/>
-      <file_required>Y</file_required>
+      <file_required>N</file_required>
       <include_subfolders>N</include_subfolders>
       <type>CSV</type>
       <compression>None</compression>
@@ -355,8 +355,8 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>259</xloc>
-      <yloc>226</yloc>
+      <xloc>258</xloc>
+      <yloc>229</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
