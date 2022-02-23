@@ -1,0 +1,16 @@
+call open_cashier_get.bat
+sleep 1
+call close_cashier_get.bat
+sleep 1
+call customer_get.bat
+sleep 1
+call item_stg_get.bat
+sleep 1
+call tran_head_get.bat
+sleep 1
+call tran_item_get.bat
+sleep 1
+call tran_tender_get.bat
+sleep 1
+call file_transfer.bat
+sleep 1
