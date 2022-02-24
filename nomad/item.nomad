@@ -1,4 +1,4 @@
-job "tran_head" {
+job "item" {
   datacenters = ["dc1"]
 
   type = "batch"
@@ -9,7 +9,7 @@ job "tran_head" {
     time_zone        = "UTC"
   }
 
-  group "tran_head" {
+  group "item" {
     count = 1
 
     restart {
@@ -19,12 +19,12 @@ job "tran_head" {
       mode     = "delay"
     }
 
-    task "tran_head" {
+    task "item" {
       driver = "raw_exec"  
 
       config {
         command = "/bin/bash"
-        args = ["/home/ubuntu/sh/tran_head_subida.sh"]
+        args = ["/home/ubuntu/sh/item_subida.sh"]
       }
 
       resources {

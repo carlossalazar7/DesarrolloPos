@@ -19,7 +19,7 @@ job "tran_tender" {
       mode     = "delay"
     }
 
-    task "open_cashier" {
+    task "tran_tender" {
       driver = "raw_exec"  
 
       config {

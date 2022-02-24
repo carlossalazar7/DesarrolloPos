@@ -19,7 +19,7 @@ job "close_cashier" {
       mode     = "delay"
     }
 
-    task "open_cashier" {
+    task "close_cashier" {
       driver = "raw_exec"  
 
       config {
