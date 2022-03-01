@@ -4,7 +4,7 @@ logfilepath="/home/ubuntu/logs/customer/CUSTOMER"$now".log"
 
 echo "---------------------------------------------"
 echo "ejecutando etl"
-sh /home/ubuntu/backups/spoon-5.0.1/data-integration/kitchen.sh  /file "/home/ubuntu/backups/spoon/customer_stg/subida/customer_stg_job.kjb" -param:fileName="/home/ubuntu/backups/spoon/customer_stg/files/pendding" /level Basic | tee -a $logfilepath
+sh /home/ubuntu/backups/spoon-5.0.1/data-integration/kitchen.sh  /file "/home/ubuntu/backups/spoon/customer_stg/subida/customer_stg_job.kjb" -param:file="/home/ubuntu/backups/spoon/customer_stg/files/pendding/" /level Detailed | tee -a $logfilepath
 echo "---------------------------------------------"
 
 

@@ -188,7 +188,7 @@
     <passing_through_fields>N</passing_through_fields>
     <accept_field/>
     <accept_stepname/>
-    <separator>&#x3b;</separator>
+    <separator>&#x7c;</separator>
     <enclosure>&#x22;</enclosure>
     <enclosure_breaks>N</enclosure_breaks>
     <escapechar/>
@@ -211,7 +211,7 @@
     <encoding/>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>&#x24;&#x7b;file_name_dat&#x7d;</name>
+      <name>&#x24;&#x7b;fileName&#x7d;</name>
       <filemask>.&#x2a;dat</filemask>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -270,7 +270,7 @@
       <field>
         <name>business_date</name>
         <type>Date</type>
-        <format>yyyy&#x2f;MM&#x2f;dd</format>
+        <format>yyyy-MM-dd</format>
         <currency>C</currency>
         <decimal>.</decimal>
         <group>,</group>
@@ -285,7 +285,7 @@
       <field>
         <name>close_datatime</name>
         <type>Date</type>
-        <format>yyyy-MM-dd HH&#x3a;mm&#x3a;ss</format>
+        <format>MM-dd-yyyy HH&#x3a;mm&#x3a;ss</format>
         <currency>C</currency>
         <decimal>.</decimal>
         <group>,</group>

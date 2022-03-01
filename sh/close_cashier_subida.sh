@@ -4,7 +4,7 @@ logfilepath="/home/ubuntu/logs/close_cashier/CLOSE_CASHIER"$now".log"
 
 echo "---------------------------------------------"
 echo "ejecutando etl"
-sh /home/ubuntu/backups/spoon-5.0.1/data-integration/kitchen.sh  /file "/home/ubuntu/backups/spoon/close_cashier_stg/subida/close_cashierUp.kjb" -param:fileName="/home/ubuntu/backups/spoon/close_cashier_stg/files/pendding" /level Basic | tee -a $logfilepath
+sh /home/ubuntu/backups/spoon-5.0.1/data-integration/kitchen.sh  /file "/home/ubuntu/backups/spoon/close_cashier_stg/subida/close_cashierUp.kjb" -param:fileName="/home/ubuntu/backups/spoon/close_cashier_stg/files/pendding/" /level Detailed | tee -a $logfilepath
 echo "---------------------------------------------"
 
 

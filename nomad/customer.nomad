@@ -1,4 +1,4 @@
-job "customer" {
+job "customer_job" {
   datacenters = ["dc1"]
 
   type = "batch"
@@ -9,17 +9,17 @@ job "customer" {
     time_zone        = "UTC"
   }
 
-  group "customer" {
+  group "customer_job" {
     count = 1
 
     restart {
-      interval = "1440m"
+      interval = "30m"
       attempts = 10
       delay    = "25s"
       mode     = "delay"
     }
 
-    task "customer" {
+    task "customer_job" {
       driver = "raw_exec"  
 
       config {

@@ -12,8 +12,8 @@
   <modified_date>2022&#x2f;02&#x2f;04 14&#x3a;39&#x3a;40.958</modified_date>
     <parameters>
         <parameter>
-            <name>file_n</name>
-            <default_value>C&#x3a;&#x5c;apps&#x5c;pos&#x5c;data&#x5c;</default_value>
+            <name>file</name>
+            <default_value/>
             <description/>
         </parameter>
     </parameters>
@@ -147,7 +147,7 @@
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
