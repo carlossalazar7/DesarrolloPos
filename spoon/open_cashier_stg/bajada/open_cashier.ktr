@@ -148,7 +148,7 @@
            <schema_name/>
            </partitioning>
     <connection>conexion_ventasdiarias</connection>
-    <sql>SELECT DISTINCT &#x24;&#x7b;POS_STORE&#x7d; as STORE, ve.terminal as CASH_MACHINE, u.nombres as CASHIER, ve.fechanegocio as BUSINESS_DATE, &#x27;&#x27; as OPEN_DATETIME &#xa;FROM ventasdiarias.venta_encabezado ve, silverpos.usuarios u, ventasdiarias.fecha_negocio fn WHERE fn.fecha &#x3d; ve.fechanegocio and u.id &#x3d; ve.idcajero</sql>
+    <sql>SELECT &#x24;&#x7b;POS_STORE&#x7d; as STORE, tc.id_terminal as CASH_MACHINE, u.nombres as CASHIER, fn.fecha as BUSINESS_DATE, &#x27;&#x27; as OPEN_DATETIME&#xa; FROM ventasdiarias.fecha_negocio fn INNER JOIN  ventasdiarias.terminal_cajero tc ON tc.id_terminal &#x3d; fn.id &#xa; INNER join silverpos.usuarios u ON u.id &#x3d; tc.id_cajero_asignado</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
