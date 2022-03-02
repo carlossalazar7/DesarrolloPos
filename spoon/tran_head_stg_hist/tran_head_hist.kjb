@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>jobbajada</name>
+  <name>tran_head_hist</name>
     <description/>
     <extended_description/>
     <job_version/>
-    <job_status>0</job_status>
   <directory>&#x2f;</directory>
   <created_user>-</created_user>
-  <created_date>2022&#x2f;02&#x2f;02 17&#x3a;27&#x3a;46.517</created_date>
+  <created_date>2022&#x2f;03&#x2f;02 10&#x3a;42&#x3a;23.868</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2022&#x2f;02&#x2f;02 17&#x3a;27&#x3a;46.517</modified_date>
+  <modified_date>2022&#x2f;03&#x2f;02 10&#x3a;42&#x3a;23.868</modified_date>
     <parameters>
     </parameters>
     <slaveservers>
@@ -51,18 +50,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>195</xloc>
-      <yloc>243</yloc>
-      </entry>
-    <entry>
-      <name>Success</name>
-      <description/>
-      <type>SUCCESS</type>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>631</xloc>
-      <yloc>141</yloc>
+      <xloc>212</xloc>
+      <yloc>257</yloc>
       </entry>
     <entry>
       <name>Transformation</name>
@@ -70,7 +59,7 @@
       <type>TRANS</type>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;transformacion1.ktr</filename>
+      <filename>C&#x3a;&#x5c;Users&#x5c;crist&#x5c;Desktop&#x5c;hist&#x5c;tran_head_hist.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -94,8 +83,18 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>432</xloc>
-      <yloc>205</yloc>
+      <xloc>441</xloc>
+      <yloc>248</yloc>
+      </entry>
+    <entry>
+      <name>Success</name>
+      <description/>
+      <type>SUCCESS</type>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>683</xloc>
+      <yloc>249</yloc>
       </entry>
   </entries>
   <hops>
