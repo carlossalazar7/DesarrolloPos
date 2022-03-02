@@ -155,7 +155,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>&#x2f;home&#x2f;avalos&#x2f;Documentos&#x2f;Consiti&#x2f;hist_open_cashier_&#x24;&#x7b;POS_STORE&#x7d;_&#x24;&#x7b;POS_NUM&#x7d;_</name>
+      <name>C&#x3a;&#x5c;apps&#x5c;pos&#x5c;data&#x5c;open_cashier_&#x24;&#x7b;POS_STORE&#x7d;_&#x24;&#x7b;POS_NUM&#x7d;_</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
