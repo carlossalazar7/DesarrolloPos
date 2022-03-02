@@ -263,7 +263,7 @@
       <field>
         <name>BUSINESS_DATE</name>
         <type>Date</type>
-        <format>MM&#x2f;dd&#x2f;yyyy</format>
+        <format>dd&#x2f;MM&#x2f;yyyy</format>
         <currency>Bs.S.</currency>
         <decimal>,</decimal>
         <group>.</group>
