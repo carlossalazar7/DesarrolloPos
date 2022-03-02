@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>etlCustomers</name>
+    <name>open_cashier_stg_his</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
     <directory>&#x2f;</directory>
     <parameters>
     </parameters>
@@ -66,18 +67,18 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2022&#x2f;02&#x2f;01 22&#x3a;32&#x3a;34.460</created_date>
+  <created_date>2022&#x2f;03&#x2f;01 14&#x3a;19&#x3a;37.303</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2022&#x2f;02&#x2f;01 22&#x3a;32&#x3a;34.460</modified_date>
+  <modified_date>2022&#x2f;03&#x2f;01 14&#x3a;19&#x3a;37.303</modified_date>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>&#x24;&#x7b;POS.NAME&#x7d;</name>
+    <name>conexion_silverpos_hist</name>
     <server>&#x24;&#x7b;POS.IP&#x7d;</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>&#x24;&#x7b;POS.DB&#x7d;</database>
+    <database>&#x24;&#x7b;POS.NAME&#x7d;</database>
     <port>&#x24;&#x7b;POS.PORT&#x7d;</port>
     <username>&#x24;&#x7b;POS.USER&#x7d;</username>
     <password>&#x24;&#x7b;POS.PASSWORD&#x7d;</password>
@@ -101,10 +102,36 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>db_silverpos</from><to>archivo_dat</to><enabled>Y</enabled> </hop>
+  <hop> <from>Table input hist_open_cashier</from><to>Text file output hist_open_cashier</to><enabled>Y</enabled> </hop>
   </order>
   <step>
-    <name>archivo_dat</name>
+    <name>Table input hist_open_cashier</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>conexion_silverpos_hist</connection>
+    <sql>SELECT DISTINCT &#x24;&#x7b;POS_STORE&#x7d; as STORE, ve.terminal as CASH_MACHINE, u.nombre as CASHIER, ve.fechanegocio as BUSINESS_DATE, &#x27;&#x27; as OPEN_DATETIME &#xa;FROM silverpos_hist.hist_venta_enca ve, silverpos_hist.hist_usuarios u WHERE u.id &#x3d; ve.idcajero&#x3b;&#xa;&#xa;&#x2f;&#x2a;SELECT DISTINCT &#x24;&#x7b;POS_STORE&#x7d; as STORE, ve.terminal as CASH_MACHINE, u.nombre as CASHIER, ve.fechanegocio as BUSINESS_DATE, &#x27;&#x27; as OPEN_DATETIME &#xa;FROM silverpos_hist.hist_venta_enca ve, silverpos_hist.hist_usuarios u WHERE ve.fechanegocio &#x3d; SYSDATE&#x28;&#x29; and u.id &#x3d; ve.idcajero&#x2a;&#x2f;</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>Y</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>187</xloc>
+      <yloc>184</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Text file output hist_open_cashier</name>
     <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -128,7 +155,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>C&#x3a;&#x5c;apps&#x5c;pos&#x5c;data&#x5c;customer_stg_&#x24;&#x7b;POS_STORE&#x7d;_&#x24;&#x7b;POS_NUM&#x7d;_</name>
+      <name>&#x2f;home&#x2f;avalos&#x2f;Documentos&#x2f;Consiti&#x2f;hist_open_cashier_&#x24;&#x7b;POS_STORE&#x7d;_&#x24;&#x7b;POS_NUM&#x7d;_</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -146,37 +173,71 @@
       <splitevery>0</splitevery>
     </file>
     <fields>
+      <field>
+        <name>STORE</name>
+        <type>Integer</type>
+        <format>0</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>CASH_MACHINE</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>CASHIER</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>BUSINESS_DATE</name>
+        <type>Date</type>
+        <format>dd&#x2f;MM&#x2f;yyyy</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>OPEN_DATETIME</name>
+        <type>Date</type>
+        <format>dd&#x2f;MM&#x2f;yyyy HH&#x3a;mm&#x3a;ss</format>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>both</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
     </fields>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>317</xloc>
-      <yloc>50</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>db_silverpos</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>&#x24;&#x7b;POS.NAME&#x7d;</connection>
-    <sql>SELECT DISTINCT&#xd;&#xa;        &#x24;&#x7b;POS_STORE&#x7d; AS &#x60;store&#x60;,&#xd;&#xa;        &#x60;ve&#x60;.&#x60;terminal&#x60; AS &#x60;cash_machine&#x60;,&#xd;&#xa;        DATE_FORMAT&#x28;&#x60;ve&#x60;.&#x60;fechanegocio&#x60;, &#x27;&#x25;d&#x2f;&#x25;m&#x2f;&#x25;Y&#x27;&#x29; AS &#x60;business_date&#x60;,&#xd;&#xa;        &#x60;ve&#x60;.&#x60;id&#x60; AS &#x60;tran_seq_no&#x60;,&#xd;&#xa;        &#x60;c&#x60;.&#x60;nombre&#x60; AS &#x60;customer_name&#x60;,&#xd;&#xa;        &#x60;c&#x60;.&#x60;email&#x60; AS &#x60;customer_email&#x60;,&#xd;&#xa;        &#x60;c&#x60;.&#x60;telefono&#x60; AS &#x60;customer_phone&#x60;,&#xd;&#xa;        &#x60;cdd&#x60;.&#x60;direccion&#x60; AS &#x60;customer_address&#x60;,&#xd;&#xa;        &#x60;tdc&#x60;.&#x60;nombre&#x60; AS &#x60;customer_document&#x60;,&#xd;&#xa;        &#x60;c&#x60;.&#x60;sexo&#x60; AS &#x60;customer_genre&#x60;,&#xd;&#xa;        &#x60;tcm&#x60;.&#x60;nombre&#x60; AS &#x60;customer_type&#x60;&#xd;&#xa;    FROM&#xd;&#xa;        &#x28;&#x28;&#x28;&#x28;&#x28;&#x28;&#x28;&#x60;silverpos&#x60;.&#x60;clientes&#x60; &#x60;c&#x60;&#xd;&#xa;        JOIN &#x60;silverpos&#x60;.&#x60;tipo_doc_cliente&#x60; &#x60;tdc&#x60; ON &#x28;&#x28;&#x60;c&#x60;.&#x60;id_tipo_doc&#x60; &#x3d; &#x60;tdc&#x60;.&#x60;id&#x60;&#x29;&#x29;&#x29;&#xd;&#xa;        JOIN &#x60;silverpos&#x60;.&#x60;tipo_cliente_maestro&#x60; &#x60;tcm&#x60; ON &#x28;&#x28;&#x60;c&#x60;.&#x60;tipo_cliente&#x60; &#x3d; &#x60;tcm&#x60;.&#x60;id&#x60;&#x29;&#x29;&#x29;&#xd;&#xa;        JOIN &#x60;silverpos&#x60;.&#x60;clientes_direcciones_domicilios&#x60; &#x60;cdd&#x60; ON &#x28;&#x28;&#x60;c&#x60;.&#x60;id&#x60; &#x3d; &#x60;cdd&#x60;.&#x60;id_cliente&#x60;&#x29;&#x29;&#x29;&#xd;&#xa;        JOIN &#x60;fiscal_el_salvador&#x60;.&#x60;caja_documento&#x60; &#x60;cd&#x60;&#x29;&#xd;&#xa;        JOIN &#x60;silverpos&#x60;.&#x60;variables_configuracion&#x60; &#x60;vc&#x60;&#x29;&#xd;&#xa;        JOIN &#x60;ventasdiarias&#x60;.&#x60;fecha_negocio&#x60; &#x60;fn&#x60;&#x29;&#xd;&#xa;        JOIN &#x60;ventasdiarias&#x60;.&#x60;venta_encabezado&#x60; &#x60;ve&#x60;&#x29;&#xd;&#xa;    WHERE&#xd;&#xa;        &#x28;&#x60;ve&#x60;.&#x60;idcliente&#x60; &#x3d; &#x60;c&#x60;.&#x60;id&#x60;&#x29;</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>Y</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>113</xloc>
-      <yloc>50</yloc>
+      <xloc>407</xloc>
+      <yloc>181</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
