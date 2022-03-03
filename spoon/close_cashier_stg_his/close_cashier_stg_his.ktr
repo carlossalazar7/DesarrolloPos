@@ -116,7 +116,7 @@
            <schema_name/>
            </partitioning>
     <connection>ConsitiPOS</connection>
-    <sql>&#xd;&#xa;SELECT &#x24;&#x7b;POS_STORE&#x7d; as STORE, &#xd;&#xa;d.terminal as CASH_MACHINE, &#xd;&#xa;b.nombre as CASHIER, &#xd;&#xa;c.fechanegocio as BUSINESS_DAE,&#xd;&#xa;sysdate&#x28;&#x29; AS  CLOSE_DATATIME,&#xd;&#xa;count&#x28;d.precio&#x29; as TRANSACTIONS_COUNT, &#xd;&#xa;round&#x28;sum&#x28;d.precio&#x29;,4&#x29; as TRANSACTIONS_TOTAL&#xd;&#xa;from  silverpos_hist.hist_venta_deta_plus d, &#xd;&#xa;silverpos_hist.hist_usuarios b, &#xd;&#xa;silverpos_hist.hist_venta_enca c&#xd;&#xa;where d.iduser &#x3d; b.id&#xd;&#xa;and date&#x28;d.horatransaccion&#x29; &#x3d; c.fechanegocio&#xd;&#xa;group by d.terminal, b.nombre, c.fechanegocio&#x3b;</sql>
+    <sql>SELECT &#x24;&#x7b;POS_STORE&#x7d; as STORE,  &#xd;&#xa;d.terminal as CASH_MACHINE, &#xd;&#xa;b.nombre as CASHIER, &#xd;&#xa;c.fecha as BUSINESS_DAE,&#xd;&#xa;sysdate&#x28;&#x29; AS  CLOSE_DATATIME, &#xd;&#xa;count&#x28;d.precio&#x29; as TRANSACTIONS_COUNT, &#xd;&#xa;round&#x28;sum&#x28;d.precio&#x29;,4&#x29; as TRANSACTIONS_TOTAL&#xd;&#xa;from  silverpos_hist.hist_venta_deta_plus d, &#xd;&#xa;silverpos_hist.hist_usuarios b, &#xd;&#xa;ventasdiarias.fecha_negocio c&#xd;&#xa;where d.iduser &#x3d; b.id&#xd;&#xa;group by d.terminal, b.nombre, c.fecha&#x3b;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>

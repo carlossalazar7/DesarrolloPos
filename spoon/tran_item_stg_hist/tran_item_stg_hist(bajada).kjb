@@ -54,6 +54,16 @@
       <yloc>169</yloc>
       </entry>
     <entry>
+      <name>Success</name>
+      <description/>
+      <type>SUCCESS</type>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>517</xloc>
+      <yloc>165</yloc>
+      </entry>
+    <entry>
       <name>Transformation</name>
       <description/>
       <type>TRANS</type>
@@ -83,18 +93,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>335</xloc>
-      <yloc>169</yloc>
-      </entry>
-    <entry>
-      <name>Success</name>
-      <description/>
-      <type>SUCCESS</type>
-      <parallel>N</parallel>
-      <draw>Y</draw>
-      <nr>0</nr>
-      <xloc>517</xloc>
-      <yloc>165</yloc>
+      <xloc>327</xloc>
+      <yloc>167</yloc>
       </entry>
   </entries>
   <hops>
