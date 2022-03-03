@@ -116,7 +116,7 @@
            <schema_name/>
            </partitioning>
     <connection>CONSITIPOS</connection>
-    <sql>SELECT CONVERT&#x28;p.id, char&#x28;50&#x29;&#x29; as ITEM, p.nombre as ITEM_DESC, cp.nombre AS CLASS, cp.nombre as SUBCLASS, null AS DEPARTAMENT, null CREATION_DATE, &#xd;&#xa;null LAST_UPDATE_DAY&#xd;&#xa;FROM plus p &#xd;&#xa;JOIN subcategoria_plu sp on p.subcategoria_plu_id &#x3d; sp.id&#xd;&#xa;JOIN categoria_plus cp on sp.categoria_plus_id &#x3d; cp.id&#xd;&#xa;WHERE p.nombre &#x3c;&#x3e; &#x27;&#x27; and p.nombre &#x3c;&#x3e; &#x27;MENSAJE&#x27;&#x3b;</sql>
+    <sql>SELECT &#xd;&#xa;    CONVERT&#x28; p.id , char &#x28;50&#x29;&#x29; as ITEM,&#xd;&#xa;    p.nombre as ITEM_DESC,&#xd;&#xa;    cp.nombre AS CLASS,&#xd;&#xa;    sp.nombre as SUBCLASS,&#xd;&#xa;    null AS DEPARTAMENT,&#xd;&#xa;    null CREATION_DATE,&#xd;&#xa;    null LAST_UPDATE_DAY&#xd;&#xa;FROM&#xd;&#xa;    plus p&#xd;&#xa;        JOIN&#xd;&#xa;    subcategoria_plu sp ON p.subcategoria_plu_id &#x3d; sp.id&#xd;&#xa;        JOIN&#xd;&#xa;    categoria_plus cp ON sp.categoria_plus_id &#x3d; cp.id&#xd;&#xa;WHERE&#xd;&#xa;    p.nombre &#x3c;&#x3e; &#x27;&#x27; and p.nombre &#x3c;&#x3e; &#x27;MENSAJE&#x27;&#x3b;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>

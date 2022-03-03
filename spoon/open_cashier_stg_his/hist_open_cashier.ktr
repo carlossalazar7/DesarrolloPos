@@ -78,7 +78,7 @@
     <server>&#x24;&#x7b;POS.IP&#x7d;</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>&#x24;&#x7b;POS.NAME&#x7d;</database>
+    <database>&#x24;&#x7b;POS.DB&#x7d;</database>
     <port>&#x24;&#x7b;POS.PORT&#x7d;</port>
     <username>&#x24;&#x7b;POS.USER&#x7d;</username>
     <password>&#x24;&#x7b;POS.PASSWORD&#x7d;</password>

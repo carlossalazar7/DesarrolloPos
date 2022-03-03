@@ -78,7 +78,7 @@
     <server>&#x24;&#x7b;POS.IP&#x7d;</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>&#x24;&#x7b;POS.NAME&#x7d;</database>
+    <database>&#x24;&#x7b;POS.DB&#x7d;</database>
     <port>&#x24;&#x7b;POS.PORT&#x7d;</port>
     <username>&#x24;&#x7b;POS.USER&#x7d;</username>
     <password>&#x24;&#x7b;POS.PASSWORD&#x7d;</password>
@@ -116,11 +116,11 @@
            <schema_name/>
            </partitioning>
     <connection>CONSITIPOS</connection>
-    <sql>SELECT CONVERT&#x28;p.id, char&#x28;50&#x29;&#x29; as ITEM, p.nombre as ITEM_DESC, cp.nombre AS CLASS, scp.nombre as SUBCLASS, null AS DEPARTAMENT, null CREATION_DATE, &#xd;&#xa;null LAST_UPDATE_DAY&#xd;&#xa;FROM hist_productos p &#xd;&#xa;JOIN hist_productos_sub_categoria scp on p.productos_sub_categoria_id &#x3d; scp.id&#xd;&#xa;JOIN hist_productos_categoria cp on scp.productos_categoria_id &#x3d; cp.id&#xd;&#xa;WHERE p.nombre &#x3c;&#x3e; &#x27;&#x27; and p.nombre &#x3c;&#x3e; &#x27;MENSAJE&#x27;&#x3b;</sql>
+    <sql>SELECT CONVERT&#x28;p.id, char&#x28;50&#x29;&#x29; as ITEM, p.nombre as ITEM_DESC, cp.nombre AS CLASS, scp.nombre as SUBCLASS, null AS DEPARTAMENT, null CREATION_DATE, &#xd;&#xa;null LAST_UPDATE_DAY&#xd;&#xa;FROM silverpos_hist.hist_productos p &#xd;&#xa;JOIN silverpos_hist.hist_productos_sub_categoria scp on p.productos_sub_categoria_id &#x3d; scp.id&#xd;&#xa;JOIN silverpos_hist.hist_productos_categoria cp on scp.productos_categoria_id &#x3d; cp.id&#xd;&#xa;WHERE p.nombre &#x3c;&#x3e; &#x27;&#x27; and p.nombre &#x3c;&#x3e; &#x27;MENSAJE&#x27;&#x3b;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
+    <variables_active>Y</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
