@@ -209,7 +209,7 @@
       <password>Encrypted </password>
       <sftpdirectory>&#x2f;home&#x2f;ubuntu&#x2f;backups&#x2f;spoon&#x2f;tran_head_stg&#x2f;files&#x2f;pendding</sftpdirectory>
       <localdirectory>C&#x3a;&#x5c;apps&#x5c;pos&#x5c;data</localdirectory>
-      <wildcard>tran_head_stg.&#x2a;dat</wildcard>
+      <wildcard>tran_head.&#x2a;dat</wildcard>
       <copyprevious>N</copyprevious>
       <copypreviousfiles>N</copypreviousfiles>
       <addFilenameResut>N</addFilenameResut>

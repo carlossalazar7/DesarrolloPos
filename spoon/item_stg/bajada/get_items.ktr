@@ -81,7 +81,7 @@
     <database>silverpos</database>
     <port>&#x24;&#x7b;POS.PORT&#x7d;</port>
     <username>&#x24;&#x7b;POS.USER&#x7d;</username>
-    <password>Encrypted 2be98afc86ae49d8ab810ba798cc2fd88</password>
+    <password>&#x24;&#x7b;POS.PASSWORD&#x7d;</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
