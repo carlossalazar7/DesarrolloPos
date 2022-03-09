@@ -13,7 +13,7 @@
     <parameters>
         <parameter>
             <name>file</name>
-            <default_value/>
+            <default_value>C&#x3a;&#x5c;apps&#x5c;pos&#x5c;data&#x5c;</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -68,7 +68,7 @@
       <file_variable_type>JVM</file_variable_type>
       <fields>
         <field>
-          <variable_name>file_n</variable_name>
+          <variable_name>file</variable_name>
           <variable_value>&#x24;&#x7b;file&#x7d;</variable_value>
           <variable_type>JVM</variable_type>
         </field>
@@ -147,7 +147,7 @@
       <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
-      <enabled>N</enabled>
+      <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>

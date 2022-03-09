@@ -73,7 +73,7 @@
   <notepads>
   </notepads>
   <connection>
-    <name>ConsitiPOS</name>
+    <name>&#x24;&#x7b;POS.NAME&#x7d;</name>
     <server>&#x24;&#x7b;POS.IP&#x7d;</server>
     <type>MYSQL</type>
     <access>Native</access>
@@ -166,8 +166,8 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>ConsitiPOS</connection>
-    <sql>select &#xd;&#xa;	&#x24;&#x7b;POS_STORE&#x7d; as store, vc.terminal as cash_machine, &#xd;&#xa;	date_format&#x28;vc.fechanegocio, &#x22;&#x25;d&#x2f;&#x25;m&#x2f;&#x25;Y &#x25;T&#x22;&#x29; as business_date,&#xd;&#xa;	pv.id as item, vd.cantidad as quantity, &#xd;&#xa;	vd.precio as unit_price, &#xd;&#xa;	&#x28;vd.cantidad &#x2a; vd.precio&#x29; as line_amount, &#xd;&#xa;	vc.id as tran_seq_no, vd.id as line_seq_no&#xd;&#xa;&#xd;&#xa;from &#xd;&#xa;	ventasdiarias.venta_encabezado vc, ventasdiarias.plusvd pv,&#xd;&#xa;	ventasdiarias.venta_detalle_plus vd&#xd;&#xa;&#xd;&#xa;where vc.idh &#x3d; vd.idh and vd.id_plu &#x3d; pv.id&#x3b;</sql>
+    <connection>&#x24;&#x7b;POS.NAME&#x7d;</connection>
+    <sql>select &#xd;&#xa;	&#x24;&#x7b;POS_STORE&#x7d; as store, vc.terminal as cash_machine, &#xd;&#xa;	date_format&#x28;vc.fechatransaccion, &#x22;&#x25;d&#x2f;&#x25;m&#x2f;&#x25;Y &#x25;T&#x22;&#x29; as business_date,&#xd;&#xa;	pv.id as item, vd.cantidad as quantity, &#xd;&#xa;	FORMAT&#x28;&#x28;vd.precio&#x29;, 2&#x29; as unit_price, &#xd;&#xa;	 REPLACE&#x28;FORMAT&#x28;&#x28;vd.cantidad &#x2a; vd.precio&#x29;,2&#x29;,&#x27;,&#x27;,&#x27;&#x27;&#x29; as line_amount, &#xd;&#xa;	vc.id as tran_seq_no, vd.id as line_seq_no, CAST&#x28;vd.borrado AS UNSIGNED&#x29; as item_status&#xd;&#xa;&#xd;&#xa;from &#xd;&#xa;	ventasdiarias.venta_encabezado vc, ventasdiarias.plusvd pv,&#xd;&#xa;	ventasdiarias.venta_detalle_plus vd&#xd;&#xa;&#xd;&#xa;where vc.idh &#x3d; vd.idh and vd.id_plu &#x3d; pv.id&#x3b;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>

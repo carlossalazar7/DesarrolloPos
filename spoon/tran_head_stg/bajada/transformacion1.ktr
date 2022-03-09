@@ -74,7 +74,7 @@
   <notepads>
   </notepads>
   <connection>
-    <name>ConsitiPOS</name>
+    <name>&#x24;&#x7b;POS.NAME&#x7d;</name>
     <server>&#x24;&#x7b;POS.IP&#x7d;</server>
     <type>MYSQL</type>
     <access>Native</access>
@@ -115,8 +115,8 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>ConsitiPOS</connection>
-    <sql>SELECT  distinct&#xd;&#xa;DATE_FORMAT&#x28;ve.fechanegocio, &#x27;&#x25;d&#x2f;&#x25;m&#x2f;&#x25;Y&#x27;&#x29; AS fechanegocio,&#xd;&#xa;    DATE_FORMAT&#x28;ve.fechatransaccion, &#x27;&#x25;d&#x2f;&#x25;m&#x2f;&#x25;Y &#x25;H&#x3a;&#x25;i&#x3a;&#x25;s&#x27;&#x29; AS fechatransaccion,&#xd;&#xa;    0 AS item_count,&#xd;&#xa;    SUM&#x28;vdg.valor&#x29; AS total_amount,&#xd;&#xa;    td.nombre AS tran_type,&#xd;&#xa;    vtc.id_cajero_asignado AS cash_maquine,&#xd;&#xa;    she.nombres AS sales_person,&#xd;&#xa;    sht.nombres AS cashier,&#xd;&#xa;    10002 AS store,&#xd;&#xa;    ve.id AS tran_seq_no&#xd;&#xa;FROM&#xd;&#xa;    ventasdiarias.venta_encabezado ve,&#xd;&#xa;    ventasdiarias.venta_detalle_plus vdp,&#xd;&#xa;    ventasdiarias.venta_detalle_pagos vdg,&#xd;&#xa;    silverpos.tipo_doc td,&#xd;&#xa;    ventasdiarias.terminal_cajero vtc,&#xd;&#xa;    silverpos.usuarios she,&#xd;&#xa;    silverpos.usuarios sht&#xd;&#xa;WHERE&#xd;&#xa;    ve.id &#x3d; vdp.id_enca&#xd;&#xa;        AND ve.id &#x3d; vdg.id_encaventa&#xd;&#xa;        AND ve.tipodoc &#x3d; td.id&#xd;&#xa;        AND ve.idcajero &#x3d; vtc.id_cajero_asignado&#xd;&#xa;        AND ve.idmesero &#x3d; she.id&#xd;&#xa;        AND ve.idcajero &#x3d; sht.id&#xd;&#xa;GROUP BY ve.id , vdp.id</sql>
+    <connection>&#x24;&#x7b;POS.NAME&#x7d;</connection>
+    <sql>SELECT  DISTINCT&#xd;&#xa;	DATE_FORMAT&#x28;ve.fechanegocio, &#x27;&#x25;d&#x2f;&#x25;m&#x2f;&#x25;Y&#x27;&#x29; AS fechanegocio,&#xd;&#xa;    DATE_FORMAT&#x28;ve.fechatransaccion, &#x27;&#x25;d&#x2f;&#x25;m&#x2f;&#x25;Y &#x25;H&#x3a;&#x25;i&#x3a;&#x25;s&#x27;&#x29; AS fechatransaccion,&#xd;&#xa;    0 AS item_count,&#xd;&#xa;    SUM&#x28;vdg.valor&#x29; AS total_amount,&#xd;&#xa;    td.nombre AS tran_type,&#xd;&#xa;    vtc.id_cajero_asignado AS cash_maquine,&#xd;&#xa;    she.nombres AS sales_person,&#xd;&#xa;    sht.nombres AS cashier,&#xd;&#xa;    &#x24;&#x7b;POS_STORE&#x7d; AS store,&#xd;&#xa;    ve.id AS tran_seq_no,&#xd;&#xa;    IF&#x28;ve.borrada &#x3c;&#x3d;&#x3e; 1, 1, IF&#x28;ve.anulado &#x3c;&#x3d;&#x3e; 1, 2, 0&#x29;&#x29; as head_status&#xd;&#xa;FROM&#xd;&#xa;    ventasdiarias.venta_encabezado ve,&#xd;&#xa;    ventasdiarias.venta_detalle_plus vdp,&#xd;&#xa;    ventasdiarias.venta_detalle_pagos vdg,&#xd;&#xa;    silverpos.tipo_doc td,&#xd;&#xa;    ventasdiarias.terminal_cajero vtc,&#xd;&#xa;    silverpos.usuarios she,&#xd;&#xa;    silverpos.usuarios sht&#xd;&#xa;WHERE&#xd;&#xa;    ve.id &#x3d; vdp.id_enca&#xd;&#xa;        AND ve.id &#x3d; vdg.id_encaventa&#xd;&#xa;        AND ve.tipodoc &#x3d; td.id&#xd;&#xa;        AND ve.idcajero &#x3d; vtc.id_cajero_asignado&#xd;&#xa;        AND ve.idmesero &#x3d; she.id&#xd;&#xa;        AND ve.idcajero &#x3d; sht.id&#xd;&#xa;GROUP BY ve.id , vdp.id&#x3b;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -175,30 +175,42 @@
     <fields>
       <field>
         <name>fechanegocio</name>
-        <type>Date</type>
-        <format>dd&#x2f;MM&#x2f;yyyy</format>
+        <type>String</type>
+        <format/>
         <currency/>
         <decimal/>
         <group/>
         <nullif/>
         <trim_type>none</trim_type>
-        <length>-1</length>
+        <length>10</length>
         <precision>-1</precision>
       </field>
       <field>
         <name>fechatransaccion</name>
-        <type>Timestamp</type>
-        <format>dd&#x2f;MM&#x2f;yyyy HH&#x3a;mm&#x3a;ss</format>
+        <type>String</type>
+        <format/>
         <currency/>
         <decimal/>
         <group/>
         <nullif/>
         <trim_type>none</trim_type>
-        <length>0</length>
+        <length>24</length>
         <precision>-1</precision>
       </field>
       <field>
         <name>item_count</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>15</length>
+        <precision>0</precision>
+      </field>
+      <field>
+        <name>total_amount</name>
         <type>BigNumber</type>
         <format>&#x23;.&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x3b;-&#x23;.&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;&#x23;</format>
         <currency/>
@@ -206,19 +218,7 @@
         <group/>
         <nullif/>
         <trim_type>none</trim_type>
-        <length>21</length>
-        <precision>4</precision>
-      </field>
-      <field>
-        <name>total_amount</name>
-        <type>Number</type>
-        <format>&#x23;.&#x23;&#x3b;-&#x23;.&#x23;</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>10</length>
+        <length>32</length>
         <precision>2</precision>
       </field>
       <field>
@@ -230,7 +230,7 @@
         <group/>
         <nullif/>
         <trim_type>none</trim_type>
-        <length>45</length>
+        <length>80</length>
         <precision>-1</precision>
       </field>
       <field>
@@ -283,15 +283,27 @@
       </field>
       <field>
         <name>tran_seq_no</name>
-        <type>String</type>
-        <format/>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
         <currency/>
-        <decimal/>
-        <group/>
+        <decimal>.</decimal>
+        <group>,</group>
         <nullif/>
         <trim_type>none</trim_type>
-        <length>1</length>
-        <precision>-1</precision>
+        <length>9</length>
+        <precision>0</precision>
+      </field>
+      <field>
+        <name>head_status</name>
+        <type>Integer</type>
+        <format>&#x23;&#x3b;-&#x23;</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>15</length>
+        <precision>0</precision>
       </field>
     </fields>
      <cluster_schema/>
