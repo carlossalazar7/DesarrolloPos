@@ -115,7 +115,7 @@
            <schema_name/>
            </partitioning>
     <connection>&#x24;&#x7b;POS.NAME&#x7d;</connection>
-    <sql>select &#xd;&#xa;	&#x22;&#x24;&#x7b;POS_STORE&#x7d;&#x22; as store, hvdp.terminal as cash_machine,&#xd;&#xa;    date_format&#x28;hve.fechatransaccion, &#x22;&#x25;d&#x2f;&#x25;m&#x2f;&#x25;Y &#x25;T&#x22;&#x29; as business_date,&#xd;&#xa;    hvdp.id_plu as item, hvdp.cantidad as quantity,&#xd;&#xa;    FORMAT&#x28;&#x28;hvdp.precio&#x29;, 2&#x29; as unit_prince,&#xd;&#xa;    REPLACE&#x28;FORMAT&#x28;&#x28;hvdp.cantidad &#x2a; hvdp.precio&#x29;,2&#x29;,&#x27;,&#x27;,&#x27;&#x27;&#x29; as line_amount,&#xd;&#xa;    hvdp.id as tran_seq_no, hve.id as line_seq_no, CAST&#x28;hvdp.borrado AS UNSIGNED&#x29; as item_status&#xd;&#xa;from&#xd;&#xa;	silverpos_hist.hist_venta_enca hve, silverpos_hist.hist_venta_deta_plus hvdp,&#xd;&#xa;    silverpos_hist.hist_productos hp&#xd;&#xa;where hve.id &#x3d; hvdp.id_enca and hvdp.id_plu &#x3d; hp.id&#x3b;</sql>
+    <sql>select &#xa;	&#x24;&#x7b;POS_STORE&#x7d; as store, hvdp.terminal as cash_machine,&#xa;    date_format&#x28;hve.fechanegocio , &#x22;&#x25;d&#x2f;&#x25;m&#x2f;&#x25;Y&#x22;&#x29; as business_date,&#xa;    hvdp.id_plu as item, hvdp.cantidad as quantity,&#xa;    FORMAT&#x28;&#x28;hvdp.precio&#x29;, 2&#x29; as unit_prince,&#xa;    REPLACE&#x28;FORMAT&#x28;&#x28;hvdp.cantidad &#x2a; hvdp.precio&#x29;,2&#x29;,&#x27;,&#x27;,&#x27;&#x27;&#x29; as line_amount,&#xa;    hvdp.id as tran_seq_no, hve.id as line_seq_no, CAST&#x28;hvdp.borrado AS UNSIGNED&#x29; as item_status&#xa;from&#xa;	silverpos_hist.hist_venta_enca hve, silverpos_hist.hist_venta_deta_plus hvdp,&#xa;    silverpos_hist.hist_productos hp&#xa;where hve.id &#x3d; hvdp.id_enca and hvdp.id_plu &#x3d; hp.id &#xa;and hve.fechanegocio BETWEEN &#x24;&#x7b;POS_DATE_START&#x7d; and &#x24;&#x7b;POS_DATE_END&#x7d;&#x3b;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -154,7 +154,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>C&#x3a;&#x5c;apps&#x5c;pos&#x5c;data&#x5c;tran_item_stg_hist_&#x24;&#x7b;POS_STORE&#x7d;_&#x24;&#x7b;POS_NUM&#x7d;_</name>
+      <name>&#x2f;home&#x2f;aragon&#x2f;tran_item_stg_hist_&#x24;&#x7b;POS_STORE&#x7d;_&#x24;&#x7b;POS_NUM&#x7d;_</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
