@@ -116,7 +116,7 @@
            <schema_name/>
            </partitioning>
     <connection>conexion_silverpos_hist</connection>
-    <sql>SELECT DISTINCT &#x24;&#x7b;POS_STORE&#x7d; as STORE, ve.terminal as CASH_MACHINE, u.nombre as CASHIER, ve.fechanegocio as BUSINESS_DATE, &#x27;&#x27; as OPEN_DATETIME &#xa;FROM silverpos_hist.hist_venta_enca ve, silverpos_hist.hist_usuarios u WHERE u.id &#x3d; ve.idcajero&#x3b;&#xa;&#xa;&#x2f;&#x2a;SELECT DISTINCT &#x24;&#x7b;POS_STORE&#x7d; as STORE, ve.terminal as CASH_MACHINE, u.nombre as CASHIER, ve.fechanegocio as BUSINESS_DATE, &#x27;&#x27; as OPEN_DATETIME &#xa;FROM silverpos_hist.hist_venta_enca ve, silverpos_hist.hist_usuarios u WHERE ve.fechanegocio &#x3d; SYSDATE&#x28;&#x29; and u.id &#x3d; ve.idcajero&#x2a;&#x2f;</sql>
+    <sql>SELECT DISTINCT &#x24;&#x7b;POS_STORE&#x7d; as STORE, ve.terminal as CASH_MACHINE, u.nombre as CASHIER, ve.fechanegocio as BUSINESS_DATE, &#x27;&#x27; as OPEN_DATETIME &#xa;FROM silverpos_hist.hist_venta_enca ve, silverpos_hist.hist_usuarios u WHERE u.id &#x3d; ve.idcajero AND  ve.fechanegocio&#xd;&#xa; BETWEEN date_add&#x28;SYSDATE&#x28;&#x29;, INTERVAL &#x24;&#x7b;POS_DAYS&#x7d; DAY&#x29;  and SYSDATE&#x28;&#x29; &#xd;&#xa;&#xd;&#xa;&#xd;&#xa;&#xa;&#x2f;&#x2a;SELECT DISTINCT &#x24;&#x7b;POS_STORE&#x7d; as STORE, ve.terminal as CASH_MACHINE, u.nombre as CASHIER, ve.fechanegocio as BUSINESS_DATE, &#x27;&#x27; as OPEN_DATETIME &#xa;FROM silverpos_hist.hist_venta_enca ve, silverpos_hist.hist_usuarios u WHERE ve.fechanegocio &#x3d; SYSDATE&#x28;&#x29; and u.id &#x3d; ve.idcajero&#x2a;&#x2f;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
