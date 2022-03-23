@@ -42,8 +42,8 @@ sh /home/ubuntu/sh/close_cashier_subida.sh
 echo "********************************************************************************"
 
 echo "********************************************************************************"
-echo "ejecutando procedimiento.sh"
-sh /home/ubuntu/sh/procedimiento.sh
+echo "ejecutando procedimiento"
+sh /home/ubuntu/sh/validate_history_data.sh
 echo "********************************************************************************"
 
 
