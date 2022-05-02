@@ -104,6 +104,92 @@
   <hop> <from>Text file input</from><to>Table output</to><enabled>Y</enabled> </hop>
   </order>
   <step>
+    <name>Table output</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>&#x24;&#x7b;POS.NAME&#x7d;</connection>
+    <schema/>
+    <table>tran_head_stg</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+        <field>
+          <column_name>business_date</column_name>
+          <stream_name>fechanegocio</stream_name>
+        </field>
+        <field>
+          <column_name>transaction_date</column_name>
+          <stream_name>fechatransaccion</stream_name>
+        </field>
+        <field>
+          <column_name>item_count</column_name>
+          <stream_name>item_count</stream_name>
+        </field>
+        <field>
+          <column_name>total_amount</column_name>
+          <stream_name>total_amount</stream_name>
+        </field>
+        <field>
+          <column_name>tran_type</column_name>
+          <stream_name>tran_type</stream_name>
+        </field>
+        <field>
+          <column_name>cash_machine</column_name>
+          <stream_name>cash_maquine</stream_name>
+        </field>
+        <field>
+          <column_name>sales_person</column_name>
+          <stream_name>sales_person</stream_name>
+        </field>
+        <field>
+          <column_name>cashier</column_name>
+          <stream_name>cashier</stream_name>
+        </field>
+        <field>
+          <column_name>store</column_name>
+          <stream_name>store</stream_name>
+        </field>
+        <field>
+          <column_name>tran_seq_no</column_name>
+          <stream_name>tran_seq_no</stream_name>
+        </field>
+        <field>
+          <column_name>head_status</column_name>
+          <stream_name>head_status</stream_name>
+        </field>
+        <field>
+          <column_name>file_name</column_name>
+          <stream_name>file_name</stream_name>
+        </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>541</xloc>
+      <yloc>223</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Text file input</name>
     <type>TextFileInput</type>
     <description/>
@@ -155,7 +241,7 @@
       <field>
         <name>fechanegocio</name>
         <type>Date</type>
-        <format>MM&#x2f;dd&#x2f;yyyy</format>
+        <format>dd&#x2f;MM&#x2f;yyyy</format>
         <currency>C</currency>
         <decimal>.</decimal>
         <group>,</group>
@@ -170,7 +256,7 @@
       <field>
         <name>fechatransaccion</name>
         <type>Date</type>
-        <format>MM&#x2f;dd&#x2f;yyyy HH&#x3a;mm&#x3a;ss</format>
+        <format>dd&#x2f;MM&#x2f;yyyy</format>
         <currency>C</currency>
         <decimal>.</decimal>
         <group>,</group>
@@ -347,92 +433,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>269</xloc>
       <yloc>219</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Table output</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <connection>&#x24;&#x7b;POS.NAME&#x7d;</connection>
-    <schema/>
-    <table>tran_head_stg</table>
-    <commit>1000</commit>
-    <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-        <field>
-          <column_name>business_date</column_name>
-          <stream_name>fechanegocio</stream_name>
-        </field>
-        <field>
-          <column_name>transaction_date</column_name>
-          <stream_name>fechatransaccion</stream_name>
-        </field>
-        <field>
-          <column_name>item_count</column_name>
-          <stream_name>item_count</stream_name>
-        </field>
-        <field>
-          <column_name>total_amount</column_name>
-          <stream_name>total_amount</stream_name>
-        </field>
-        <field>
-          <column_name>tran_type</column_name>
-          <stream_name>tran_type</stream_name>
-        </field>
-        <field>
-          <column_name>cash_machine</column_name>
-          <stream_name>cash_maquine</stream_name>
-        </field>
-        <field>
-          <column_name>sales_person</column_name>
-          <stream_name>sales_person</stream_name>
-        </field>
-        <field>
-          <column_name>cashier</column_name>
-          <stream_name>cashier</stream_name>
-        </field>
-        <field>
-          <column_name>store</column_name>
-          <stream_name>store</stream_name>
-        </field>
-        <field>
-          <column_name>tran_seq_no</column_name>
-          <stream_name>tran_seq_no</stream_name>
-        </field>
-        <field>
-          <column_name>head_status</column_name>
-          <stream_name>head_status</stream_name>
-        </field>
-        <field>
-          <column_name>file_name</column_name>
-          <stream_name>file_name</stream_name>
-        </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>541</xloc>
-      <yloc>223</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

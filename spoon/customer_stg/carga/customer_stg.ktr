@@ -230,7 +230,7 @@
       <name>&#x24;&#x7b;file&#x7d;</name>
       <filemask>.&#x2a;dat</filemask>
       <exclude_filemask/>
-      <file_required>N</file_required>
+      <file_required>Y</file_required>
       <include_subfolders>N</include_subfolders>
       <type>CSV</type>
       <compression>None</compression>
@@ -242,7 +242,7 @@
         <name>store</name>
         <type>Integer</type>
         <format>&#x23;</format>
-        <currency>&#xa3;</currency>
+        <currency>C</currency>
         <decimal>.</decimal>
         <group>,</group>
         <nullif>-</nullif>
@@ -255,15 +255,15 @@
       </field>
       <field>
         <name>cash_machine</name>
-        <type>String</type>
-        <format/>
-        <currency>&#xa3;</currency>
+        <type>Integer</type>
+        <format>&#x23;</format>
+        <currency>C</currency>
         <decimal>.</decimal>
         <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
-        <length>-1</length>
+        <length>15</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
@@ -271,8 +271,8 @@
       <field>
         <name>business_date</name>
         <type>Date</type>
-        <format>MM&#x2f;dd&#x2f;yyyy</format>
-        <currency>&#xa3;</currency>
+        <format>dd&#x2f;MM&#x2f;yyyy</format>
+        <currency>C</currency>
         <decimal>.</decimal>
         <group>,</group>
         <nullif>-</nullif>
@@ -286,53 +286,8 @@
       <field>
         <name>tran_seq_no</name>
         <type>Integer</type>
-        <format/>
-        <currency>&#xa3;</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif>-</nullif>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>customer_name</name>
-        <type>String</type>
-        <format/>
-        <currency>&#xa3;</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif>-</nullif>
-        <ifnull/>
-        <position>-1</position>
-        <length>24</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>customer_email</name>
-        <type>String</type>
-        <format/>
-        <currency>&#xa3;</currency>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif>-</nullif>
-        <ifnull/>
-        <position>-1</position>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-      </field>
-      <field>
-        <name>customer_phone</name>
-        <type>String</type>
         <format>&#x23;</format>
-        <currency>&#xa3;</currency>
+        <currency>C</currency>
         <decimal>.</decimal>
         <group>,</group>
         <nullif>-</nullif>
@@ -344,16 +299,61 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>customer_address</name>
+        <name>customer_name</name>
         <type>String</type>
         <format/>
-        <currency>&#xa3;</currency>
+        <currency>C</currency>
         <decimal>.</decimal>
         <group>,</group>
         <nullif>-</nullif>
         <ifnull/>
         <position>-1</position>
-        <length>123</length>
+        <length>14</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>customer_email</name>
+        <type>String</type>
+        <format/>
+        <currency>C</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>5</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>customer_phone</name>
+        <type>String</type>
+        <format/>
+        <currency>C</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>8</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>customer_address</name>
+        <type>String</type>
+        <format/>
+        <currency>C</currency>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif>-</nullif>
+        <ifnull/>
+        <position>-1</position>
+        <length>24</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
@@ -362,7 +362,7 @@
         <name>customer_document</name>
         <type>String</type>
         <format/>
-        <currency>&#xa3;</currency>
+        <currency>C</currency>
         <decimal>.</decimal>
         <group>,</group>
         <nullif>-</nullif>
@@ -375,9 +375,9 @@
       </field>
       <field>
         <name>customer_genre</name>
-        <type>String</type>
+        <type>Integer</type>
         <format>&#x23;</format>
-        <currency>&#xa3;</currency>
+        <currency>C</currency>
         <decimal>.</decimal>
         <group>,</group>
         <nullif>-</nullif>
@@ -392,7 +392,7 @@
         <name>customer_type</name>
         <type>String</type>
         <format/>
-        <currency>&#xa3;</currency>
+        <currency>C</currency>
         <decimal>.</decimal>
         <group>,</group>
         <nullif>-</nullif>
