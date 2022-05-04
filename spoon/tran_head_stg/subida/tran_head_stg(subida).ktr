@@ -315,7 +315,7 @@
       </field>
       <field>
         <name>cash_maquine</name>
-        <type>Integer</type>
+        <type>String</type>
         <format>&#x23;</format>
         <currency>C</currency>
         <decimal>.</decimal>
