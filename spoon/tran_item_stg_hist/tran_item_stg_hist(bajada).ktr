@@ -73,14 +73,14 @@
   <notepads>
   </notepads>
   <connection>
-    <name>&#x24;&#x7b;POS.NAME&#x7d;</name>
-    <server>&#x24;&#x7b;POS.IP&#x7d;</server>
+    <name>tranitem</name>
+    <server>localhost</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>&#x24;&#x7b;POS.DB&#x7d;</database>
-    <port>&#x24;&#x7b;POS.PORT&#x7d;</port>
-    <username>&#x24;&#x7b;POS.USER&#x7d;</username>
-    <password>&#x24;&#x7b;POS.PASSWORD&#x7d;</password>
+    <database>ConsitiPOS</database>
+    <port>3306</port>
+    <username>aragon</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce108fc0fc8e</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -91,7 +91,7 @@
       <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
       <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
-      <attribute><code>PORT_NUMBER</code><attribute>&#x24;&#x7b;POS.PORT&#x7d;</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>3306</attribute></attribute>
       <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
       <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
       <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
@@ -114,8 +114,8 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-    <connection>&#x24;&#x7b;POS.NAME&#x7d;</connection>
-    <sql>select &#xa;	&#x24;&#x7b;POS_STORE&#x7d; as store, hvdp.terminal as cash_machine,&#xa;    date_format&#x28;hve.fechanegocio , &#x22;&#x25;d&#x2f;&#x25;m&#x2f;&#x25;Y&#x22;&#x29; as business_date,&#xa;    hvdp.id_plu as item, hvdp.cantidad as quantity,&#xa;    FORMAT&#x28;&#x28;hvdp.precio&#x29;, 2&#x29; as unit_prince,&#xa;    REPLACE&#x28;FORMAT&#x28;&#x28;hvdp.cantidad &#x2a; hvdp.precio&#x29;,2&#x29;,&#x27;,&#x27;,&#x27;&#x27;&#x29; as line_amount,&#xa;    hvdp.id as tran_seq_no, hve.id as line_seq_no, CAST&#x28;hvdp.borrado AS UNSIGNED&#x29; as item_status&#xa;from&#xa;	silverpos_hist.hist_venta_enca hve, silverpos_hist.hist_venta_deta_plus hvdp,&#xa;    silverpos_hist.hist_productos hp&#xa;where hve.id &#x3d; hvdp.id_enca and hvdp.id_plu &#x3d; hp.id &#xa;and hve.fechanegocio BETWEEN date_add&#x28;SYSDATE&#x28;&#x29;, INTERVAL &#x24;&#x7b;POS_DAYS&#x7d; DAY&#x29;  and SYSDATE&#x28;&#x29;</sql>
+    <connection>tranitem</connection>
+    <sql>select &#xa; 	&#x24;&#x7b;POS_STORE&#x7d; as store, &#xa;	hvdp.terminal as cash_machine,&#xa;    date_format&#x28;hve.fechanegocio , &#x22;&#x25;d&#x2f;&#x25;m&#x2f;&#x25;Y&#x22;&#x29; as business_date,&#xa;    hvdp.id_plu as item, &#xa;	hvdp.cantidad as quantity,&#xa;    FORMAT&#x28;&#x28;hvdp.precio&#x29;, 2&#x29; as unit_prince,&#xa;    REPLACE&#x28;FORMAT&#x28;&#x28;hvdp.cantidad &#x2a; hvdp.precio&#x29;,2&#x29;,&#x27;,&#x27;,&#x27;&#x27;&#x29; as line_amount,&#xa;    id_enca as tran_seq_no, &#xa;	ROW_NUMBER&#x28;&#x29; OVER &#x28;PARTITION BY id_enca ORDER BY hvdp.id desc&#x29; AS line_seq_no, &#xa;	CAST&#x28;hvdp.borrado AS UNSIGNED&#x29; as item_status&#xa;from&#xa;	silverpos_hist.hist_venta_enca hve, &#xa;    silverpos_hist.hist_venta_deta_plus hvdp,&#xa;    silverpos_hist.hist_productos hp&#xa;where hve.id &#x3d; hvdp.id_enca  &#xa;and hvdp.id_plu &#x3d; hp.id &#xa;and hve.fechanegocio BETWEEN &#x22;2022-01-01&#x22;  and SYSDATE&#x28;&#x29;&#xa;-- and hve.id&#x3d;1791&#xa;and hvdp.id_plu &#x3d; hp.id&#xa;order by hvdp.id desc&#x3b;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
