@@ -101,7 +101,7 @@
     </attributes>
   </connection>
   <order>
-  <hop> <from>tren_item</from><to>text file output</to><enabled>Y</enabled> </hop>
+  <hop> <from>tren_item</from><to>text file output</to><enabled>N</enabled> </hop>
   </order>
   <step>
     <name>text file output</name>
@@ -167,7 +167,7 @@
            <schema_name/>
            </partitioning>
     <connection>&#x24;&#x7b;POS.NAME&#x7d;</connection>
-    <sql>select &#xa;	&#x24;&#x7b;POS_STORE&#x7d; as store, &#xa;     a.terminal as cash_machine, &#xa;	 date_format&#x28;a.fechatransaccion, &#x22;&#x25;d&#x2f;&#x25;m&#x2f;&#x25;Y &#x25;T&#x22;&#x29; as business_date,&#xa;	 c.id as item, &#xa;     b.cantidad as quantity, &#xa;	 FORMAT&#x28;&#x28;b.precio&#x29;, 2&#x29; as unit_price, &#xa;	 REPLACE&#x28;FORMAT&#x28;&#x28;b.cantidad &#x2a; b.precio&#x29;,2&#x29;,&#x27;,&#x27;,&#x27;&#x27;&#x29; as line_amount, &#xa;	 a.id as tran_seq_no, &#xa;     b.id as line_seq_no, &#xa;     CAST&#x28;b.borrado AS UNSIGNED&#x29; as item_status&#xa;from &#xa;	ventasdiarias.venta_encabezado a, &#xa;    ventasdiarias.venta_detalle_plus b,    &#xa;    ventasdiarias.plusvd c&#xa; where a.id&#x3d;b.id_enca&#xa;   and b.id_plu&#x3d;c.id&#x3b;</sql>
+    <sql>select &#xa;	&#x24;&#x7b;POS_STORE&#x7d; as store, &#xa;     a.terminal as cash_machine, &#xa;	 date_format&#x28;a.fechatransaccion, &#x22;&#x25;d&#x2f;&#x25;m&#x2f;&#x25;Y &#x25;T&#x22;&#x29; as business_date,&#xa;	 c.id as item, &#xa;     b.cantidad as quantity, &#xa;	 FORMAT&#x28;&#x28;b.precio &#x2b; b.tax1&#x2f;b.cantidad&#x29;, 2&#x29; as unit_price, &#xa;	 REPLACE&#x28;FORMAT&#x28;&#x28;b.cantidad &#x2a; &#x28;b.precio &#x2b; b.tax1&#x29;&#x29;,2&#x29;,&#x27;,&#x27;,&#x27;&#x27;&#x29; as line_amount, &#xa;	 a.id as tran_seq_no, &#xa;     b.id as line_seq_no, &#xa;     CAST&#x28;b.borrado AS UNSIGNED&#x29; as item_status&#xa;from &#xa;	ventasdiarias.venta_encabezado a, &#xa;    ventasdiarias.venta_detalle_plus b,    &#xa;    ventasdiarias.plusvd c&#xa; where a.id&#x3d;b.id_enca&#xa;   and b.id_plu&#x3d;c.id&#xa;   and b.precio&#x3e;0&#xa;  union&#xa; select &#xa;	&#x24;&#x7b;POS_STORE&#x7d; as store, &#xa;     a.terminal as cash_machine, &#xa;	 date_format&#x28;a.fechatransaccion, &#x22;&#x25;d&#x2f;&#x25;m&#x2f;&#x25;Y &#x25;T&#x22;&#x29; as business_date,&#xa;	 c.id as item, &#xa;     b.cantidad as quantity, &#xa;	 FORMAT&#x28;&#x28;b.precio&#x29;, 2&#x29; as unit_price, &#xa;	 REPLACE&#x28;FORMAT&#x28;&#x28;b.cantidad &#x2a; &#x28;b.precio &#x2b; b.tax1&#x29;&#x29;,2&#x29;,&#x27;,&#x27;,&#x27;&#x27;&#x29; as line_amount, &#xa;	 a.id as tran_seq_no, &#xa;     b.id as line_seq_no, &#xa;     CAST&#x28;b.borrado AS UNSIGNED&#x29; as item_status&#xa;from &#xa;	ventasdiarias.venta_encabezado a, &#xa;    ventasdiarias.venta_detalle_plus b,    &#xa;    ventasdiarias.plusvd c&#xa; where a.id&#x3d;b.id_enca&#xa;   and b.id_plu&#x3d;c.id&#xa;   and b.precio&#x3c;0&#x3b;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -175,7 +175,7 @@
     <lazy_conversion_active>N</lazy_conversion_active>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>199</xloc>
+      <xloc>200</xloc>
       <yloc>92</yloc>
       <draw>Y</draw>
       </GUI>
